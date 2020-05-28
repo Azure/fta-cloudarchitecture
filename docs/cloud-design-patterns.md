@@ -20,5 +20,8 @@ Stamps
 Sharding
 Geods
 
+## Learn
 
+Checkout the excellent learning paths on Microsoft/Learn including [Build great solutions with the Microsoft
+Azure Well-Architected Framework](https://docs.microsoft.com/en-nz/learn/paths/azure-well-architected-framework/)
 
