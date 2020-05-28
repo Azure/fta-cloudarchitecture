@@ -8,7 +8,35 @@ description: "Add 150 character max description"
 urlFragment: "update-this-to-unique-url-stub"
 ---
 
-# Official Microsoft Sample
+# Azure Architecture
+
+This presentation is about architecture design in the Cloud. This is important because the way we design solutions in the cloud has a large impact on things like cost, performance, security and management. Making good architecture decisions during the design and requirements phase helps us to be more successful in Cloud and to have a more awesome experience once we are in Production.
+
+🎂🎂🎂 HAPPY BIRTHDAY TIM!!! 🎉🎈🎉
+
+## Outline of today's session
+
+* What do you mean "Cloud Architect" [cloud-solution-architect.md](docs/cloud-solution-architecture.md)
+* Why is it different in cloud [cloud-fundamentals.md](docs/cloud-fundamentals.md)
+* Cloud design patterns (a glimpse)[cloud-design-patterns.md](docs/cloud-design-patterns.md)
+* Anti paterns [anti-patterns.md](docs/anti-patterns.md)
+* The importance of requirements
+* The domination of agile
+* Keep across the change
+* Resliency and Business Continuity
+
+## Who Should Attend?
+
+*  I am designing a solution for the cloud
+*  I am building my organisations cloud strategy
+*  I need a useful reference to shame my peers' poor habits
+
+## What are the prerequesites
+
+*  Basic understanding of Software Archeticture Principles e.g Resliancy, Requirements, Business continuity
+*  
+
+
 
 <!-- 
 Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
