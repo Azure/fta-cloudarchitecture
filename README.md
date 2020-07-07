@@ -2,6 +2,21 @@
 
 This presentation is about architecture design in the Cloud. This is important because the way we design solutions in the cloud has a large impact on things like cost, performance, security and management. Making good architecture decisions during the design and requirements phase helps us to be more successful in Cloud and to have a more awesome experience once we are in Production.
 
+## Outline v2
+
+* Cloud Architecture (role, practice)
+* Bringing business requirements to the design process
+  * Service selection
+  * Requirements mapping to features
+  * What's important to various Personas
+* Fundamentals, economics, elasticity, loose coupling, eventual consisitency
+* The Well-Architecture Framework
+  * FKA AAF, FKA Azure Application Guide, FKA P&P...
+* Reliability
+  * Walk through the review? 
+* Operational Excellence
+* Cost optimization??
+
 ## Outline of today's session
 
 * What do you mean "Cloud Architect" [cloud-solution-architect.md](docs/cloud-solution-architect.md)
