@@ -1,6 +1,6 @@
 # Azure Architecture
 
-This presentation is about architecture design in the Cloud. This is important because the way we design solutions in the cloud has a large impact on things like cost, performance, security and management. Making good architecture decisions during the design and requirements phase helps us to be more successful in Cloud and to have a more awesome experience once we are in Production.
+This presentation is about architecture design in the Cloud. This is important because the way we design solutions in the cloud has a large impact on things like scalability, cost, performance, security and management. Making good architecture decisions during the design and requirements phase helps us to be more successful in Cloud and to have a more awesome experience once we are in Production.
 
 ## Outline v2
 
@@ -31,6 +31,7 @@ This presentation is about architecture design in the Cloud. This is important b
 ## Goals of this session
 
 * To familiarise Engineers with the Architect role and practice
+* To understand how cloud architecture is different from traditional forms of architecture, and where it is similar
 * To demonstrate how Engineers and Architects can use the Azure Architecture centre, the Well-architected framework, 
   Cloud adoption framework in their daily work
 * To familiarise Engineers and Architects with training resources like Microsoft Learn
@@ -43,7 +44,7 @@ This presentation is about architecture design in the Cloud. This is important b
 
 ## What are the prerequesites
 
-*  Basic understanding of Software Archeticture Principles e.g Resliancy, Requirements, Business continuity
+*  Basic understanding of Software Archeticture Principles e.g Resiliency, Requirements, Business continuity
 *  
 
 

@@ -10,15 +10,16 @@ Cache Aside
 [PubSub](https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber)
 API Facade
 
-## Resilancy
+## Resiliency
 Thottling
 Retry
-CircuitBreaker
+Circuit Breaker
 
 ## Geo
+DR vs. geographically distributed solutions
 Stamps
 Sharding
-Geods
+Geodes
 
 ## Learn
 
