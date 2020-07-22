@@ -1,92 +1,102 @@
-# Azure Architecture
+# FastTrack for Azure: Well-Architected
 
-This presentation is about architecture design in the Cloud. This is important because the way we design solutions in the cloud has a large impact on things like scalability, cost, performance, security and management. Making good architecture decisions during the design and requirements phase helps us to be more successful in Cloud and to have a more awesome experience once we are in Production.
+This is the companion repo for the _Well-Architected 1:many session_ run periodically by the FastTrack
+for Azure team. This repo contains the presentation material and other assets for this 90 minute session.
 
-## Outline v2
+> For more information about the FastTrack for Azure team and 1:many sessions, visit [Azure.com/FastTrack].
 
-* Cloud Architecture (role, practice)
-* Bringing business requirements to the design process
-  * Service selection
-  * Requirements mapping to features
-  * What's important to various Personas
-* Fundamentals, economics, elasticity, loose coupling, eventual consisitency
-* The Well-Architecture Framework
-  * FKA AAF, FKA Azure Application Guide, FKA P&P...
-* Reliability
-  * Walk through the review? 
-* Operational Excellence
-* Cost optimization??
+This presentation is about Architecture design in the Cloud. This is important because the way we design 
+solutions in the cloud has a large impact on things like scalability, cost, performance, security and 
+management overhead. Making good architecture decisions during the design and requirements phase helps
+us to be more successful in Cloud and to have a better experience once we are in Production.
 
-## Outline of today's session
+## 1:many sessions
 
-* What do you mean "Cloud Architect" [cloud-solution-architect.md](docs/cloud-solution-architect.md)
-* Why is it different in cloud [cloud-fundamentals.md](docs/cloud-fundamentals.md)
-* Cloud design patterns (a glimpse)[cloud-design-patterns.md](docs/cloud-design-patterns.md)
-* Anti-patterns [anti-patterns.md](docs/anti-patterns.md)
-* The importance of requirements
-* The domination of agile
-* Keep across the change
-* Resliency and Business Continuity
+This presentation and content is written and delivered by FastTrack for Azure engineers who work closely
+with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' 
+projects include some of the largest, most complex and most critical workloads deployed into Public
+Cloud today. Our goal in a _1:many_ session is to pass on generalized advice based on what we have learned
+from delivering thousands of engagements and hundreds of successful production deployments in Azure.
+
+Hopefully the richness of our content will make up for our lack of presentation skills (we often don't
+use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest
+views on the good, the bad, the ugly.
+
+## Azure Well-Architected Framework
+
+FastTrack for Azure team are contributors to the [Azure Architecture Center] which contains several
+excellent resources for Architects including [Application Architecture Guide], [Cloud Adoption Framework]
+and [Well-Architected Framework]. All of the architecture advice given by FastTrack in 1:1 or 1:many
+sessions is backed by the patterns and practices in these guides. In this presentation we will focus
+on the [Well-Architected Framework] (although we recommend you study them all).
 
 ## Goals of this session
 
-* To familiarise Engineers with the Architect role and practice
-* To understand how cloud architecture is different from traditional forms of architecture, and where it is similar
-* To demonstrate how Engineers and Architects can use the Azure Architecture centre, the Well-architected framework, 
-  Cloud adoption framework in their daily work
-* To familiarise Engineers and Architects with training resources like Microsoft Learn
+By the end of this session we hope you will have a clear understanding of:
+
+* What it means to be an architect of solutions in the cloud
+* How cloud architecture is different from traditional forms of architecture, and where it is the same
+* To demonstrate how engineers and architects can use the [Azure Architecture Center], the [Well-Architected
+  Framework] and the [Cloud Adoption Framework] in their daily work
+* To familiarise Engineers and Architects with training resources like [Microsoft Learn]
 
 ## Who Should Attend?
 
-*  I am designing a solution for the cloud
-*  I am building my organisations cloud strategy
-*  I need a useful reference to shame my peers' poor habits
+Any engineer or architect who is involved in the design of cloud solutions and/or the formulation of
+cloud and technology strategy.
 
-## What are the prerequesites
+## What are the prerequisites?
 
-*  Basic understanding of Software Archeticture Principles e.g Resiliency, Requirements, Business continuity
-*  
+* Solution Architecture experience would be advantageous
+* Understanding of software Archeticture principles e.g Resiliency, Requirements, Business continuity
+* We recommend familiarizing yourself with the [Azure Architecture Center]
+* We recommend guided learning paths like [Microsoft Learn], [LinkedIn Learning] and [Pluralsight]
 
+## Session Outline
 
+This 90 minute 1:many session we will run like this. Each top-level section will run for about 10 minutes.
 
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
+1. Welcome, introductions
+   * About FastTrack for Azure
+   * Other 1:many sessions
+   * Azure Architecture Center and the Well-Architected Framework
+1. Architecture in the cloud
+   * The role of the Architect
+   * Architecture design session
+   * Architecture review session
+   * Relative cost to fix
+1. Requirements, requirements, requirements
+    * Bringing business requirements to the design process
+    * Service selection
+    * Requirements mapping to features
+    * What's important to various Personas
+    * What about security?
+1. Important fundamentals
+    * Cloud economics
+    * Elasticity
+    * Loose coupling
+    * Eventual consistency
+1. Cloud design patterns
+1. Reliability
+    * Well-Architected review demo 
+1. Performance & cost optimisation
+1. Operational excellence
+    * SLA, SLO, SLI oh my!
+    * Failure modes
+    * Run books
+    * Automate all the things
+1. Final question time and wrap
 
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
+## Links
 
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
-
-Give a short description for your sample here. What does it do and why is it important?
-
-## Contents
-
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
-
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
-
-## Prerequisites
-
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
-
-## Setup
-
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
-
-## Running the sample
-
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
-
-## Key concepts
-
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+* [azure.com/FastTrack]
+* [Azure Architecture Center]
+* [Application Architecture Guide]
+* [Cloud Adoption Framework]
+* [Well-Architected Framework]
+* [Microsoft Learn]
+* [LinkedIn Learning]
+* [Pluralsight]
 
 ## Contributing
 
@@ -101,3 +111,12 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+[azure.com/FastTrack]:https://azure.microsoft.com/en-us/programs/azure-fasttrack/
+[Azure Architecture Center]:https://docs.microsoft.com/en-us/azure/architecture/
+[Application Architecture Guide]:https://docs.microsoft.com/en-us/azure/architecture/guide/
+[Cloud Adoption Framework]:https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/
+[Well-Architected Framework]:https://docs.microsoft.com/en-us/azure/architecture/framework/
+[Microsoft Learn]:https://docs.microsoft.com/en-us/learn/roles/solutions-architect
+[LinkedIn Learning]:https://www.linkedin.com/learning/search?keywords=Cloud%20Computing&u=3322
+[Pluralsight]:https://www.pluralsight.com/browse/cloud-computing
