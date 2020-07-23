@@ -41,36 +41,36 @@ Any engineer or architect who is involved in the design of cloud solutions and/o
 
 This 90 minute 1:many session we will run like this. Each top-level section will run for about 10 minutes.
 
-1. Welcome, introductions
+1. **Welcome, introductions**
    * About FastTrack for Azure
    * Other 1:many sessions
    * Azure Architecture Center and the Well-Architected Framework
-1. Architecture in the cloud
+1. **[Architecture in the cloud](./docs/cloud-architecture.md)**
    * The role of the Architect
    * Architecture design session
    * Architecture review session
    * Relative cost to fix
-1. Requirements, requirements, requirements
+1. **[Requirements, requirements, requirements](./docs/requirements.md)**
     * Bringing business requirements to the design process
     * Service selection
     * Requirements mapping to features
     * What's important to various Personas
     * What about security?
-1. Important fundamentals
+1. **[Cloud fundamentals](./docs/cloud-fundamentals.md)**
     * Cloud economics
     * Elasticity
     * Loose coupling
     * Eventual consistency
-1. Cloud design patterns
-1. Reliability
+1. **[Cloud design patterns](./docs/cloud-design-patterns.md)**
+1. **[Reliability](./docs/reliability.md)**
     * Well-Architected review demo 
-1. Performance & cost optimisation
-1. Operational excellence
+1. **[Performance & cost optimisation](./docs/performance.md)**
+1. **[Operational excellence](./docs/ops.md)**
     * SLA, SLO, SLI oh my!
     * Failure modes
     * Run books
     * Automate all the things
-1. Final question time and wrap
+1. **Final question time and wrap**
 
 ## Links
 
