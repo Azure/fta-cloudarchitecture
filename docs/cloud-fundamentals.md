@@ -1,5 +1,7 @@
 # Cloud fundamentals
 
+> **[prev]** | **[home]**  | **[next]**
+
 Digital transformation has driven incredible demand for services and the servers that host them. The
 cloud is essentially a solution to problems of economics and scale in server hosting. As a result of
 the change in scale, we need to design and architect our systems a little differently so that we can
@@ -80,3 +82,9 @@ and eventing can allow your components to scale independently of one another, an
 between those components to protect them and increase the overall solution resiliency. If you want
 to scale elastically, you really need to ensure your components are loosely coupled so that the
 infrastructure can provision and deprovision workers dynamically.
+
+> **[prev]** | **[home]**  | **[next]**
+
+[prev]:/requirements.md
+[home]:/README.md
+[next]:./cloud-design-patterns.md
