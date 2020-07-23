@@ -8,7 +8,7 @@ This presentation is about Architecture design in the Cloud. This is important b
 
 ## 1:many sessions
 
-This presentation and content is written and delivered by FastTrack for Azure engineers who work closely with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and most critical workloads deployed into Public Cloud today. Our goal in a _1:many_ session is to pass on generalized advice based on what we have learned from delivering thousands of engagements and hundreds of successful production deployments in Azure.
+This presentation and content is written and delivered by FastTrack for Azure engineers who work closely with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and most critical workloads deployed into Public Cloud today. Our goal in a _1:many_ session is to pass on generalized advice based on "real world" experience delivering thousands of engagements and hundreds of successful production deployments in Azure.
 
 Hopefully the richness of our content will make up for our lack of presentation skills (we often don't use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest views on the good, the bad, the ugly.
 
@@ -32,10 +32,10 @@ Any engineer or architect who is involved in the design of cloud solutions and/o
 
 ## What are the prerequisites?
 
-* Solution Architecture experience would be advantageous
-* Understanding of software Archeticture principles e.g Resiliency, Requirements, Business continuity
-* We recommend familiarizing yourself with the [Azure Architecture Center]
-* We recommend guided learning paths like [Microsoft Learn], [LinkedIn Learning] and [Pluralsight]
+* Complete the [Introduction to the Microsoft Azure Well-Architected Framework] module in Microsoft
+  Learn
+* Familiarize yourself with the [Azure Architecture Center]
+* Consider guided learning paths like [Microsoft Learn], [LinkedIn Learning] and [Pluralsight]
 
 ## Session Outline
 
@@ -107,3 +107,4 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 [LinkedIn Learning]:https://www.linkedin.com/learning/search?keywords=Cloud%20Computing&u=3322
 [Pluralsight]:https://www.pluralsight.com/browse/cloud-computing
 [Build great solutions with the Microsoft Azure Well-Architected Framework]:https://docs.microsoft.com/en-us/learn/paths/azure-well-architected-framework/
+[Introduction to the Microsoft Azure Well-Architected Framework]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/

@@ -2,13 +2,20 @@
 
 > **[prev]** | **[home]**  | **[next]**
 
+## DevOps
+
+## Monitoring & analytics
+
+## Automate all the things
+
+## Test
+
 ## SLA, SLO, SLI oh my!
 
 ## Failure modes
 
 ## Run books
 
-## Automate all the things
 
 > **[prev]** | **[home]**  | **[next]**
 
