@@ -10,54 +10,66 @@ enormous pools of compute resources and storage, vast global networks, and handl
 amount of the administrative and management burden for you. There are a few principles you should
 think about as you design your solution so that you can get the most out of being in the cloud.
 
-> TODO: Copy some slides in here
-
-* Traditional hosting model vs cloud
-* Cloud computing models
-* Relative costs
-* IaaS -> Paas -> Serverless -> SaaS
-
 ## Economics of the cloud
 
+In traditional models of server hosting, we typically maintained corporate server rooms and small
+data centres to house our infrastructure. Equipment was procured, installed, and then operated for
+a fixed lifetime - usually three to five years - before being decommissioned and replaced. This
+required capital expenditure of fixed cost, and the asset values depreciated over time. Traditional
+hosting models also favoured manual operations and often had fairly relaxed security.
 
+Virtualisation helped to get a bit more efficient use of our infrastructure, since we could
+provision capacity and spread it across multiple workloads. But for most companies it was
+challenging to achieve optimal density of VMs to hosts due to the
+[knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem). Scaling VMs up often requires
+even more infrastructure to be provisioned.
 
-## Cloud computing models
+The cloud is essentially a hyperscale virtualisation environment. Cloud regions (comprised of
+multiple datacentres) can host millions of cores and petabytes of RAM and storage. As there are so
+many resources available, the law of large numbers dictates that the we can achieve better density
+and can generally have a much better chance of fulfilling scale requests. The economies of scale
+also mean that the average marginal cost (of additional CPU/RAM/storage) can often be much lower in
+the cloud.
 
+### Relative cost of resources
 
-### Resiliency
-Well-designed cloud architectures involve bringing together multiple components and external systems
-into a single distributed system. But distributed systems are complex, and failures can propagate
-through them. Cloud providers can ensure that your solution is highly resilient to failures if you
-follow some key best practices.
+(TODO Diagram - relative cost of resources)
 
-Commodity hardware is what makes the cloud cheaper and easier to provision and work with, and this
-means that failures are simply part of life. Most modern applications are expected to be available
-24/7 and don't have the luxury of having maintenance windows. Instead of trying to avoid failures, a
-good cloud architecture embraces the fact that failures happen and instead will recover from
-failures gracefully. We plan for failures at every layer, and ensure we use techniques like the
-Bulkhead, Retry and Circuit breaker patterns, queueing, decoupling components, and using Azure
-regions and availability zones to provide geo-redundancy and disaster recovery capabilities.
+## Elasticity
 
-Make sure that you keep the business requirements in mind, though. Deploying multiple instances of
-a resource across regions might help to increase its resiliency and recoverability, but it may be
-overkill for a small application that manages information with low importance.
+There are a number of workload patterns that make the best use of the economics and scale of the
+cloud:
 
-### Flexibility and agility
-Be prepared to rearchitect. Your requirements will change and evolve, and your user base or request
-volumes will (hopefully!) increase as you grow. It often doesn't make sense to build a highly
-scalable solution on day one of your business, so you will need to plan to rearchitect as you scale.
-You will also want to take advantage of new technologies, services, and patterns. Traditional
-enterprise solutions are treated as projects with a defined end date; in the cloud, you need to
-allow for constant improvement.
+* **On and off:** some workloads only need to run for a small amount of time, such as batch jobs.
+  Provisioning dedicated infrastructure just for these is wasteful when the infrastructure is only
+  used intermittently.
+* **Growing fast:** workloads that scale up as the business grows will require more and more
+  infrastructure to run them. Without the cloud, it can be very hard to provision new hardware fast
+  enough to keep up with growing demand.
+* **Unpredictable bursting:** some workloads have unpredictable or unplanned burst in demand, such
+  as when a celebrity endorses a product on Twitter. Sudden spikes in load can impact performance
+  for everyone, and since the bursting is unpredictable we need the elasticity of the cloud in order
+  to rapidly provision new resources.
+* **Predictable bursting:** even when a workload's bursting is predictable and planned, such as daily
+  or seasonal peaks in traffic, it can be challenging to provision enough capacity for those times
+  while not wasting resources the rest of the time. The elasticity of the cloud allows for the
+  necessary resources to be provisioned when needed and then deprovisioned.
 
-### Elasticity
-Cloud computing not only allows for high scale, it also allows for rapidly scaling your solution out
-and in again. If you use this correctly, you can keep your costs low initially as you build out your
-user base, while also rapidly responding to an influx of traffic or activity. To make the most of
-the elasticity provided by the cloud it's generally best to prefer stateless applications where
-possible, and to avoid having bottlenecks that might inhibit your ability to scale quickly.
+TODO draw the diagrams
 
-### Loose coupling
+Each of these take advantage of **elasticity** - the large pool of resources means that new
+resources can be provisioned on demand, used as required, and then deprovisioned.
+
+By taking advantage of elasticity you can keep your costs low initially as you build out your
+user base, while also rapidly responding to an influx of traffic or activity.
+
+To make the most of the elasticity provided by the cloud there are a few things you can do such as:
+* Prefer stateless applications wherever possible, so that you can rapidly shift your traffic
+  around and don't have to pin specific requests to specific compute instances.
+* Avoid having bottlenecks that might inhibit your ability to scale out quickly.
+* Loosely couple your components so that you can scale each part of your solution independently.
+
+## Loose coupling
 Any non-trivial solution will be made up of multiple components that work together. The
 communication and coupling between these components matters a great deal. Synchronous communication
 might appear to be the simplest option initially, but any downstream delays or bottlenecks can cause
@@ -68,8 +80,3 @@ and eventing can allow your components to scale independently of one another, an
 between those components to protect them and increase the overall solution resiliency. If you want
 to scale elastically, you really need to ensure your components are loosely coupled so that the
 infrastructure can provision and deprovision workers dynamically.
-
-### Automation
-To get the most out of your cloud infrastructure, plan to automate your deployment and configuration
-wherever possible. Make use of infrastructure as code approaches, scripting, and templating to
-ensure that you can rapidly create new environments for both development and production scaling.
