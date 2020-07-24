@@ -30,4 +30,4 @@ Some key requirements that should be gathered upfront include:
 
 [prev]:./cloud-architecture.md
 [home]:/README.md
-[next]:./requirements.md
+[next]:./cloud-fundamentals.md

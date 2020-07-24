@@ -64,12 +64,13 @@ This 90 minute 1:many session we will run like this. Each top-level section will
 1. **[Cloud design patterns](./docs/cloud-design-patterns.md)**
 1. **[Reliability](./docs/reliability.md)**
     * Well-Architected review demo 
-1. **[Performance & cost optimisation](./docs/performance.md)**
-1. **[Operational excellence](./docs/ops.md)**
     * SLA, SLO, SLI oh my!
+    * Composite SLA
     * Failure modes
     * Run books
     * Automate all the things
+1. **[Performance & cost optimisation](./docs/performance.md)**
+1. **[Operational excellence](./docs/ops.md)**
 1. **Final question time and wrap**
 
 ## Links

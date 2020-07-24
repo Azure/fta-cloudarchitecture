@@ -10,12 +10,6 @@
 
 ## Test
 
-## SLA, SLO, SLI oh my!
-
-## Failure modes
-
-## Run books
-
 
 > **[prev]** | **[home]**  | **[next]**
 
