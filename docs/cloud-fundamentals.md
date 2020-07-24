@@ -35,7 +35,9 @@ the cloud.
 
 ### Relative cost of resources
 
-(TODO Diagram - relative cost of resources)
+TODO
+
+![Relative cost of resources](./images/relative-costs.png)
 
 ## Elasticity
 
@@ -52,15 +54,16 @@ cloud:
   as when a celebrity endorses a product on Twitter. Sudden spikes in load can impact performance
   for everyone, and since the bursting is unpredictable we need the elasticity of the cloud in order
   to rapidly provision new resources.
-* **Predictable bursting:** even when a workload's bursting is predictable and planned, such as daily
-  or seasonal peaks in traffic, it can be challenging to provision enough capacity for those times
-  while not wasting resources the rest of the time. The elasticity of the cloud allows for the
+* **Predictable bursting:** even when a workload's bursting is predictable and planned, such as
+  daily or seasonal peaks in traffic, it can be challenging to provision enough capacity for those
+  times while not wasting resources the rest of the time. The elasticity of the cloud allows for the
   necessary resources to be provisioned when needed and then deprovisioned.
 
-TODO draw the diagrams
+![Relative cost of resources](./images/cloud-computing-patterns.png)
 
 Each of these take advantage of **elasticity** - the large pool of resources means that new
-resources can be provisioned on demand, used as required, and then deprovisioned.
+resources can be rapidly provisioned when they are required, used for as long as they are needed,
+and then deprovisioned.
 
 By taking advantage of elasticity you can keep your costs low initially as you build out your
 user base, while also rapidly responding to an influx of traffic or activity.
@@ -73,18 +76,38 @@ To make the most of the elasticity provided by the cloud there are a few things 
 
 ## Loose coupling
 Any non-trivial solution will be made up of multiple components that work together. The
-communication and coupling between these components matters a great deal. Synchronous communication
-might appear to be the simplest option initially, but any downstream delays or bottlenecks can cause
-your entire solution's performance to be degraded. Loosely coupling your components, using
-asynchronous communication, and making use of patterns like
-[Queue-based load leveling](https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling)
-and eventing can allow your components to scale independently of one another, and provide a buffer
-between those components to protect them and increase the overall solution resiliency. If you want
-to scale elastically, you really need to ensure your components are loosely coupled so that the
-infrastructure can provision and deprovision workers dynamically.
+communication and coupling between these components matters a great deal.
+
+Synchronous communication is often the simplest approach to implement. It also is typically more
+performant, since messages are sent directly from point to point. This can be a good approach for
+simpler systems, or for communicating between two parts of a solution that are highly
+interdependent - for example, talking from an application to a database or cache.
+
+However, in some situations tight coupling will lead to problems. Any downstream delays, failures,
+or bottlenecks can cause your entire solution's performance to be degraded. Tightly coupling
+components together also means you often can't easily take advantage of horizontal scaling.
+
+Loose coupling, on the other hand, requires asynchronous communication. It often involves 
+message brokers like Service Bus. Instead of sending requests directly between systems, the sender
+instead send a message to a broker, and the destination system subscribes to the broker and
+receive its instructions on what to do. Alternatively, eventing can be used for components to 
+publish information about actions that have taken place into a central broker, and other components
+can listen to the events coming from that broker events and decide when they might need to take
+action. 
+
+Loose coupling has some important benefits for resiliency and elasticity.
+* **Resiliency:** loose coupling means there is a buffer between your solution components to
+  protect them one another's failures. This typically increases the resiliency of the overall solution.
+* **Elasticity:** to achieve elastic scale, it helps to have loosely coupled components. Adding
+  additional compute workers and removing unnecessary compute workers can be achieved without
+  upstream systems needing to be aware of the scaling.
+
+## Eventual consistency
+
+TODO
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:/requirements.md
+[prev]:./requirements.md
 [home]:/README.md
 [next]:./cloud-design-patterns.md
