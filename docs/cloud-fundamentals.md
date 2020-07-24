@@ -74,6 +74,10 @@ To make the most of the elasticity provided by the cloud there are a few things 
 * Avoid having bottlenecks that might inhibit your ability to scale out quickly.
 * Loosely couple your components so that you can scale each part of your solution independently.
 
+TODO
+https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/scale-out
+
 ## Loose coupling
 Any non-trivial solution will be made up of multiple components that work together. The
 communication and coupling between these components matters a great deal.
@@ -102,9 +106,42 @@ Loose coupling has some important benefits for resiliency and elasticity.
   additional compute workers and removing unnecessary compute workers can be achieved without
   upstream systems needing to be aware of the scaling.
 
+TODO
+* https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/minimize-coordination
+* https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
+* https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
+
 ## Eventual consistency
 
 TODO
+* Historically, applications have been built to expect their data stores to have strong consistency - i.e. to have the most recent data available at all times, and for changes to data to be instantly persisted and available everywhere
+* Cloud-based systems often need networking across geographical distances, and geographic networking means latency
+* Strong consistency also imples tight coupling
+* If you are using strong consistency, you need to synchronously update data stores and wait for confirmation - this could be very slow in a geo-replicated data store
+* Instead we think about eventual consistency where possible - systems will coordinate with one another and will eventually be in sync, but for some period (usually seconds or minutes, sometimes longer) they might be out of sync with recent changes
+* Sounds bad, but it's actually quite workable - e.g. for sales data, you typically need up to midnight the night before, not up-to-the-second accuracy
+* Many solutions need a mixture of strong and eventual consistency - e.g. strong consistency within a transactional system, eventual consistency to replicate out to an analytics system or third party. If an order is placed, might need strong consistency to get the order persisted, but then eventual consistency to sales analytics systems or a recommendation system that works based on historical orders.
+* Caching is a good example of this
+  * Caches are eventually consistent with the source data store, but we sacrifice some immediate update to get higher throughput at lower cost
+* Can sometimes dial up or down consistency to trade off performance and availability (CAP theorem)
+* Event driven architectures and microservices almost always require eventual consistency, since each individual system has its own independent data store 
+
+TODO
+https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
+https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
+https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
+https://en.wikipedia.org/wiki/CAP_theorem
+
+Eventual consistency, loose coupling, and elasticity are all interrelated
+* LC implies EC
+* LC supports E
+
+## Partitioning
+? TODO
+https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
+https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning
+https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies
+
 
 > **[prev]** | **[home]**  | **[next]**
 
