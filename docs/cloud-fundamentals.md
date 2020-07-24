@@ -137,6 +137,11 @@ Eventual consistency, loose coupling, and elasticity are all interrelated
 * LC supports E
 
 ## Partitioning
+
+Think about data stores - is everything really relational?
+Sharding, partitioning, stamps
+TODO scaling out usually cheaper than scaling up
+
 ? TODO
 https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
 https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning
