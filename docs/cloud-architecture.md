@@ -8,6 +8,8 @@ Solution architecture is concerned with the planning, design, implementation, an
 
 A Solution Architect is someone who assists teams to design solutions that are fit for purpose. In the cloud this role is known as a "Cloud solution architect". In many teams Architect is a role, not a job title. It's important that every engineer puts their "Architect" hat on from time to time.
 
+XXXXXXXXX Architecture role in Agile XXXXXXXXXXXXXX
+
 ## Azure Well-Architected Framework pillars
 
 The Azure Well-Architected Framework consists of five pillars:
