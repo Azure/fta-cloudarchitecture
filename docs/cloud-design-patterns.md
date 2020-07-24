@@ -1,5 +1,7 @@
 # Cloud design patterns
 
+> **[prev]** | **[home]**  | **[next]**
+
 [Cloud design patterns on the Azure Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
 
 ## Loose coupling and elasticity
@@ -29,3 +31,9 @@
 ## Learn
 
 Check out the excellent learning paths on Microsoft Learn, including [Build great solutions with the Microsoft Azure Well-Architected Framework](https://docs.microsoft.com/en-nz/learn/paths/azure-well-architected-framework/)
+
+> **[prev]** | **[home]**  | **[next]**
+
+[prev]:/cloud-fundamentals.md
+[home]:/README.md
+[next]:./reliability.md
