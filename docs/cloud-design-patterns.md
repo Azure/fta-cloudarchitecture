@@ -2,38 +2,44 @@
 
 > **[prev]** | **[home]**  | **[next]**
 
-[Cloud design patterns on the Azure Architecture Center](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
+The Azure Architecture Center contains a large number of design patterns that explain how common
+problems can be solved with cloud architecture. There are a large number of patterns that span
+several types of considerations including reliability, performance, and managing complex
+deployments.
 
-## Loose coupling and elasticity
-* [Publisher-Subcriber](https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber)
-* [Queue-based Load Leveling](https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling)
-* [Competing Consumers](https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers)
-* [Async Request-Reply](https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
-* [Choreography](https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography)
+In this section we will briefly examine a few of the patterns that relate to the fundamental
+concepts we explored in the previous section.
 
-## Geographical distribution
-* [Sharding](https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding)
-* [Deployment Stamps](https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp)
-* [Geodes](https://docs.microsoft.com/en-us/azure/architecture/patterns/geodes)
+> 📖 See all of the design patterns in the [Azure Architecture Center's design patterns list].
 
-## Cloud economics and performance
-* [Static content hosting](https://docs.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting)
-* [Cache-Aside](https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside)
+## Cloud economics and cost optimisation
+
+* [Static Content Hosting pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting
+* [Cache-Aside pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside
+
+## Elasticity and loose coupling
+* [Publisher-Subcriber pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber
+* [Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
+* [Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
+* [Async Request-Reply pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply
+* [Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
 
 ## Eventual consistency
-* [Compensating Transactions](https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction)
+* [Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
+
+## Partitioning
+* [Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
+* [Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
+* [Geodes pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/geodes
 
 ## Reliability and resiliency
-* [Thottling](https://docs.microsoft.com/en-us/azure/architecture/patterns/throttling)
-* [Retry](https://docs.microsoft.com/en-us/azure/architecture/patterns/retry)
-* [Circuit Breaker](https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
-
-## Learn
-
-Check out the excellent learning paths on Microsoft Learn, including [Build great solutions with the Microsoft Azure Well-Architected Framework](https://docs.microsoft.com/en-nz/learn/paths/azure-well-architected-framework/)
+* [Thottling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/throttling
+* [Retry pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/retry
+* [Circuit Breaker pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
 
 > **[prev]** | **[home]**  | **[next]**
 
 [prev]:/cloud-fundamentals.md
 [home]:/README.md
 [next]:./reliability.md
+[Azure Architecture Center's design patterns list]:https://docs.microsoft.com/en-us/azure/architecture/patterns/

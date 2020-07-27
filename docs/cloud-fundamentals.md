@@ -37,12 +37,12 @@ cloud.
 Different types of resources have very different pricing models. Consider four common types of
 resources used in many cloud-hosted applications:
 
-* Network traffic. Azure typically does not charge for traffic entering our regions (ingress) but
-  does charge for traffic as it leaves (egresses) our regions.
-* Storage. There are a number of different storage options for different storage profiles.
-* Compute. There are a large number of options for types of VMs available depending on the feature
-  set and resource profile required.
-* A SQL database, which includes storage, compute, and networking as part of its implementation.
+* **Network traffic.** Azure typically does not charge for traffic entering our regions (_ingress_)
+  but does charge for traffic as it leaves (_egresses_) our regions.
+* **Storage.** There are a number of different storage options for different storage profiles.
+* **Compute.** There are a large number of options for types of VMs available depending on the
+  feature set and resource profile required.
+* **Databases.** These include storage, compute, and networking as part of their implementation.
 
 We can compare the relative costs of some entry-level resource profiles for each of these resource
 types:
@@ -247,6 +247,8 @@ It's also important to understand that elasticity, loose coupling, eventual cons
 partitioning are all interrelated:
 * Loosely coupling your components implies you need eventual consistency between those components.
 * Elasticity is easier to achieve when your systems are loosely coupled.
+* Asynchronous communication is used to achieve loose coupling, and this imnplies eventual
+  consistency while enabling elastic scaling.
 * Partitioning allows you to make use of elastic scaling to quickly scale horizontally.
 
 > **[prev]** | **[home]**  | **[next]**
