@@ -168,25 +168,20 @@ Many solutions need a mixture of consistency levels for different parts of their
 
 > 📖 Read more about data store and consistency level selection in [Application Architecture Guide - Use the best data store for the job].
 
-[CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
-[Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
-[Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
-[Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
-
-It's also important to recognise that eventual consistency, loose coupling, and elasticity are all interrelated:
-* Loose coupling your components implies you need eventual consistency between those components.
-* Elasticity is easier to achieve when your systems are loosely coupled.
-
 ## Partitioning
 
-Sharding, partitioning, stamps
-TODO scaling out usually cheaper than scaling up
+A further key principle of designing solutions for the cloud is partitioning. Each partition represents a distinct set of data or compute resources that can be managed and accessed separately. Partitioning is frequently used for high-volume solutions to allow different sets of physical infrastructure to independently manage subsets of the total data set, and to perform querying and compute operations on that data.
 
-? TODO
-https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
-https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning
-https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies
+Partitioning is an example of horizontal scaling. In general, horizontal scaling (scaling _out_) is cheaper and more efficient than vertical scaling (scaling _up_). Partitions allow us to achieve extremely high scale even while maintaining consistent performance. It also allows you to design systems that might not otherwise be possible due to resource limits, such as data disk sizes, disk I/O limits, network limits, and CPU performance limits.
 
+> 📖 Read more in [Application Architecture Guide - Data partitioning strategies] and [Application Architecture Guide - Partition around limits].
+
+While partitioning is often thought of in terms of data stores, you can also consider partitioning for other components too. For example, you might horizontally scale your entire solution by deploying a second instance.
+
+It's also important to understand that elasticity, loose coupling, eventual consistency, and partitioning are all interrelated:
+* Loosely coupling your components implies you need eventual consistency between those components.
+* Elasticity is easier to achieve when your systems are loosely coupled.
+* Partitioning allows you to make use of elastic scaling to quickly scale horizontally.
 
 > **[prev]** | **[home]**  | **[next]**
 
@@ -200,3 +195,9 @@ https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitio
 [Application Architecture Guide - Minimize coordination]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/minimize-coordination
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
+[CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
+[Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
+[Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
+[Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
+[Application Architecture Guide - Data partitioning strategies]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies
+[Application Architecture Guide - Partition around limits]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
