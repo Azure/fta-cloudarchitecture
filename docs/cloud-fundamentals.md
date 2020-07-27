@@ -59,8 +59,7 @@ Microsoft, Google, and Facebook) make use of architectures and patterns that fav
 resources while still achieving massive scale. We can use similar practices to optimise the
 selection of technologies to suit the cloud pricing models.
 
-> 📖 Read more in [Azure Well-Architected Framework - Maximize efficiency of cloud spend]
-> (Microsoft Learn)
+> 📖 Read more in [Azure Well-Architected Framework - Maximize efficiency of cloud spend].
 
 ### Cloud models
 
@@ -106,7 +105,7 @@ To make the most of the elasticity provided by the cloud there are a few things 
 * Configure [auto-scaling] on your resources so that you can quickly scale even with unpredictable
   bursting.
 
-> 📖 Read more in [Azure Architecture Guide - Design to scale out]
+> 📖 Read more in [Azure Architecture Guide - Design to scale out].
 
 ## Loose coupling
 Any non-trivial solution will be made up of multiple components that work together. The
@@ -142,36 +141,44 @@ Loose coupling has some important benefits for resiliency and elasticity.
   additional compute workers and removing unnecessary compute workers can be achieved without
   upstream systems needing to be aware of the scaling.
 
-> 📖 Read more in [Application Architecture Guide - Minimize coordination]
+> 📖 Read more in [Application Architecture Guide - Minimize coordination].
 
 ## Eventual consistency
 
-TODO
-* Historically, applications have been built to expect their data stores to have strong consistency - i.e. to have the most recent data available at all times, and for changes to data to be instantly persisted and available everywhere
-* Cloud-based systems often need networking across geographical distances, and geographic networking means latency
-* Strong consistency also imples tight coupling
-* If you are using strong consistency, you need to synchronously update data stores and wait for confirmation - this could be very slow in a geo-replicated data store
-* Instead we think about eventual consistency where possible - systems will coordinate with one another and will eventually be in sync, but for some period (usually seconds or minutes, sometimes longer) they might be out of sync with recent changes
-* Sounds bad, but it's actually quite workable - e.g. for sales data, you typically need up to midnight the night before, not up-to-the-second accuracy
-* Many solutions need a mixture of strong and eventual consistency - e.g. strong consistency within a transactional system, eventual consistency to replicate out to an analytics system or third party. If an order is placed, might need strong consistency to get the order persisted, but then eventual consistency to sales analytics systems or a recommendation system that works based on historical orders.
-* Caching is a good example of this
-  * Caches are eventually consistent with the source data store, but we sacrifice some immediate update to get higher throughput at lower cost
-* Can sometimes dial up or down consistency to trade off performance and availability (CAP theorem)
-* Event driven architectures and microservices almost always require eventual consistency, since each individual system has its own independent data store 
+In traditional networks and environments, applications were typically built to expect their data stores to have _strong consistency_ - in other words, to have the most recent data available at all times, and for changes to data to be instantly persisted and available everywhere. This suited solutions that ran in a single data centre. However, cloud solutions can often require us to reconsider whether strong consistency is truly necessary.
 
-TODO
-https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
-https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
-https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
-https://en.wikipedia.org/wiki/CAP_theorem
+In cloud environments, we need to consider both the consistency and the availability of our systems, as well as its performance and throughput. The [CAP theorem] states that high consistency and high availability need to be balanced against each other and that there is a trade-off between the two.
 
-Eventual consistency, loose coupling, and elasticity are all interrelated
-* LC implies EC
-* LC supports E
+We may require our components to be networked across geographical regions, such as for high availability or disaster recovery. Connections between regions involve a certain amount of latency simply due to the speed of light. If we need to synchronise or replicate our data across the world, then strong consistency will require a significant amount of time to complete each transaction. Each transaction will need to synchronously update all of the replicas and wait for confirmation, which could be very slow and impact the overall throughput of our system.
+
+Instead, consider whether _eventual consistency_ is possible. In an eventually consistent store, systems coordinate with each other and their data stores eventually will be consistent with one another; but for some period of time (usually seconds or a few minutes, but sometimes longer) they might be out of sync with recent changes from other systems. This can seem like a major problem, but in fact many workloads suit this pattern quite well.
+
+Eventual consistency is also important for synchronising data between two different systems. For example, consider a sales system that replicates sales data out to a reporting system. If this is done in real-time and with strong consistency then the reporting system will always be completely accurate, but at the cost of strongly coupling the two systems together, and at a longer transaction time and reduced transaction throughput since transactions have to be committed by two different systems. In most scenarios, though, the sales data is actually not fully analysed for several minutes, or even until the next business day, and so the performance trade-offs of eventual consistency are justified.
+
+Some architectural styles require the use of eventual consistency. For example, a microservices architecture or an event-driven architecture each involve independent systems, which typically have their own data stores and are designed specifically to prioritise loose coupling and high performance.
+
+> 📖 Read more about data store selection for microservices architectures in the [Azure Architecture Center - Data considerations for microservices].
+
+Even within more typical architectures, eventual consistency will still be a useful principle. For example:
+* [Caching] typically involves a data store (a _cache_) maintaining a copy of data so that subsequent requests do not need to go back to the data store or application. The cache will often be refreshed at a defined interval, and changes that happen within that cached data interval may not be visible to consumers until the cache is refreshed.
+* Geo-replication of data is almost always done asynchronously, and the secondary replicas will therefore be eventually consistent.
+* Some data stores, such as Cosmos DB, support multi-region writes. These writes are synchronised across all of the regions that contain the database, but the synchronisation process is asynchronous and eventually consistent.
+
+Many solutions need a mixture of consistency levels for different parts of their solution. For example, you might need strong consistency within a transactional system but eventual consistency for replicas across regions, or to synchronise data to an analytics system or third party. Some data stores, like Cosmos DB, let you control the consistency level at the transaction level to meet your requirements.
+
+> 📖 Read more about data store and consistency level selection in [Application Architecture Guide - Use the best data store for the job].
+
+[CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
+[Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
+[Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
+[Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
+
+It's also important to recognise that eventual consistency, loose coupling, and elasticity are all interrelated:
+* Loose coupling your components implies you need eventual consistency between those components.
+* Elasticity is easier to achieve when your systems are loosely coupled.
 
 ## Partitioning
 
-Think about data stores - is everything really relational?
 Sharding, partitioning, stamps
 TODO scaling out usually cheaper than scaling up
 
