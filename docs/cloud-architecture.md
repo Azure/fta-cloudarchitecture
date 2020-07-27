@@ -6,9 +6,19 @@ Solution architecture is concerned with the planning, design, implementation, an
 
 ## The role of the Architect
 
-A Solution Architect is someone who assists teams to design solutions that are fit for purpose. In the cloud this role is known as a "Cloud solution architect". In many teams Architect is a role, not a job title. It's important that every engineer puts their "Architect" hat on from time to time.
+A Solution Architect is someone who assists teams to design solutions that are fit for purpose. In the cloud this role is known as a "Cloud solution architect". In many teams Architect is a role, not a job title. It's important that every engineer learns cloud architecture patterns and practices.
 
-XXXXXXXXX Architecture role in Agile XXXXXXXXXXXXXX
+## Do we need Architects in Agile?
+
+While some teams have decided that having a dedicated Architect role is unnecessary, the need for good _architecture_ does not go away; in fact it is crucial for Agile teams that want to move fast, but still meet important business requirements around reliability, performance, operational excellence, cost and security. One approach for Agile teams is for all engineers to share the role of architect, putting on their "architect hat" from time to time. Another approach is to have an Architect available to the team as an _advisor_. FastTrack for Azure engineers are often used in this capacity.
+
+## Relative cost to fix and shift left
+
+NIST conducted a study in 2002<sup>1</sup> observing that the relative cost to fix software defects increased exponentially the later they were discovered in the development process.
+
+![Chart showing the relative cost to fix, based on time of detection](./images/relative-cost-to-fix.png) <br/>_Figure: Example of relative cost to fix, based on time of detection._
+
+This research has been widely cited to _shift left_ testing processes from System / Acceptance Testing phase into Coding phase. However the impact from detecting defects in **Requirements / Architecture** phase are even more pronounced, with this example showing 30X saving in cost compared to detecting the same defect in Production / Post-Release.
 
 ## Azure Well-Architected Framework pillars
 
@@ -20,31 +30,32 @@ The Azure Well-Architected Framework consists of five pillars:
 * Reliability
 * Security
 
-> Read more in [Azure Well-Architected Framework pillars] (Microsoft Learn)
+> 📖 Read more in [Azure Well-Architected Framework pillars] (Microsoft Learn)
 
 ## Architecture design
 
-Good practices in the design phase help to reduce issues in later phases of a system's life. While it is important to think about requirements in the early stage we should be careful not to fall into the trap of [Big Design Up Front] (BDUF); our design should evolve and the process should continue until the end of the system's life. In the next section we will learn why requirements are so important for design. This will be a recurring theme throughout this 1:many session.
+Good practices in the design phase help to reduce issues in later phases of a system's life. While it is important to think about requirements in the early stage we should be careful not to fall into the trap of [Big Design Up Front] (BDUF); our design should evolve and continue to be refined until the end of the system's life. In the next section we will learn why business requirements are so critical to good design, and can greatly simplify the design process. This will be a recurring theme throughout this 1:many session.
 
-An _architecture design session_ is a good way to kick-off a project. A small team of architects, engineers and product owners would meet to whiteboard a design, or to review a _candidate architecture_ that has already been researched and designed by a Solution architect. When critiquing a design the vision, strategy and business requirements should be kept firmly in mind. A _reference architecture_ may also be used as a starting point.  
+An _architecture design session_ is a good way to kick-off a project. A small team of architects, engineers and product owners would meet to whiteboard a design, or to review a _candidate architecture_ that has already been researched and designed by a Solution architect. When critiquing a design the _vision_, _strategy_ and _business requirements_ should be kept firmly in mind. A _reference architecture_ may be used as a starting point.  
 
-> A Microsoft Cloud Solution Architect (CSA) is a good resource for the envisioning and design phase of a Cloud Architecture design in Azure. Contact your Microsoft Account Team to request assistance from a CSA.
+![Flow chart showing an example of an Architectural design process](./images/architecture-design-process-example.png) <br/>_Figure: Example of an Architectural design process._
 
-Once a candidate architecture has been formed it should be documented in a diagram. An _architectural spike_ is used to validate assumptions and detailed _research and design_ of each component should be undertaken. For example, it is vital that architects have a good understanding of the limits of the services and components that they are using.
+> 💡 A Microsoft Cloud Solution Architect (CSA) is a good resource for the envisioning and design phase of a Cloud Architecture design in Azure. Contact your Microsoft Account Team to request assistance from a CSA.
 
-> Read: [Azure subscription and service limits, quotas, and constraints]
+Once a candidate architecture has been formed it should be documented in a diagram. An _architectural spike_ may be performed to validate assumptions. Detailed _research and design_ of each component should be undertaken. For example, it is vital that architects understand the limits of the services and components that are being used.
+
+> 📖 [Azure subscription and service limits, quotas, and constraints]
 
 ## Architecture review
 
 Once a good candidate architecture has been formed and the team are getting close to starting Dev/Test then we highly recommend requesting an Architecture Review from the FastTrack for Azure team. In
 a 90 minute review session we will review your design to validate that it meets your business requirements and offer advice (including a list of recommendations and risks) where we see room for improvements. The goal of a FastTrack for Azure Architecture review is to help you be successful in your deployment to Azure and also to have a great experience once your are operating your system in production.
 
-> [FastTrack for Azure Architectural / Solution Review and Guidance Framework]
+> 📖 [FastTrack for Azure Architectural / Solution Review and Guidance Framework]
 
-## Relative cost to fix
+## Links and references
 
-
-
+1. [The Economic Impacts of Inadequate Infrastructure for Software] (PDF)
 
 > **[prev]** | **[home]**  | **[next]**
 
@@ -55,3 +66,4 @@ a 90 minute review session we will review your design to validate that it meets 
 [Azure Well-Architected Framework pillars]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/2-pillars
 [Azure subscription and service limits, quotas, and constraints]:https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
 [FastTrack for Azure Architectural / Solution Review and Guidance Framework]:https://github.com/Azure/fta-architecturalreview/blob/master/articles/introduction.md
+[The Economic Impacts of Inadequate Infrastructure for Software]:https://www.nist.gov/system/files/documents/director/planning/report02-3.pdf
