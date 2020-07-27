@@ -63,9 +63,13 @@ selection of technologies to suit the cloud pricing models.
 
 ### Cloud models
 
-TODO
-Self-managed vs. managed, IaaS/PaaS/serverless
-Consider the TCO - the cloud vendor is taking a lot of the work away from you
+Cloud providers like Azure also provide both managed and unmanaged components. For example, if you provision a VM to run your application, you are then opting into managing the VM yourself. This will involve installing your dependencies, keeping the VM and your dependencies patched, upgrading its operating system, deciding when and how to scale it, backing it up on a regular basis, and many other tasks.
+
+In constrast, managed services take care of some or all of these concerns for you. The cloud vendor takes responsiblity for many aspects of the ongoing operation of the service. We typically think of these as platform-as-a-service (PaaS) or serverless offerings.
+
+When evaluating the cost of different services, it's important to consider the total cost of ownership (TCO). PaaS and serverless offerings typically have a lower TCO because of the significant reduction in administrative work and therefore operational expenditure. They also sometimes allow scaling to much lower cost, and elastically scaling up to higher tiers, as required.
+
+> 📖 Read more in [Azure Well-Architected Framework - Provision with optimization].
 
 ## Elasticity
 
@@ -190,6 +194,7 @@ It's also important to understand that elasticity, loose coupling, eventual cons
 [next]:./cloud-design-patterns.md
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
+[Azure Well-Architected Framework - Provision with optimization]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/3-provision-with-optimization
 [auto-scaling]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
 [Azure Architecture Guide - Design to scale out]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/scale-out
 [Application Architecture Guide - Minimize coordination]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/minimize-coordination
