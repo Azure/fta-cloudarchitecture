@@ -115,10 +115,11 @@ To make the most of the elasticity provided by the cloud there are a few things 
   around and don't have to pin specific requests to specific compute instances.
 * Avoid having bottlenecks that might inhibit your ability to scale out quickly.
 * Loosely couple your components so that you can scale each part of your solution independently.
-* Configure [auto-scaling] on your resources so that you can quickly scale even with unpredictable
+* Configure auto-scaling on your resources so that you can quickly scale even with unpredictable
   bursting.
 
-> 📖 Read more in [Azure Architecture Guide - Design to scale out].
+> 📖 Read more in [Application Architecture Guide - Design to scale out] and
+> [Application Architecture Guide - Autoscaling].
 
 ## Loose coupling
 Any non-trivial solution will be made up of multiple components that work together. The
@@ -256,8 +257,8 @@ partitioning are all interrelated:
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
 [Azure Well-Architected Framework - Provision with optimization]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/3-provision-with-optimization
-[auto-scaling]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
-[Azure Architecture Guide - Design to scale out]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/scale-out
+[Application Architecture Guide - Autoscaling]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+[Application Architecture Guide - Design to scale out]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/scale-out
 [Application Architecture Guide - Minimize coordination]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/minimize-coordination
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
