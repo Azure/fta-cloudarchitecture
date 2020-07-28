@@ -64,13 +64,24 @@ each message. This helps to balance the workload between workers.
 
 > 📖 Read the full [Competing Consumers pattern].
 
-TODO below
-
-* [Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
-
 ## Patterns to support eventual consistency
-* [Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
-* Maybe CQRS, or event sourcing?
+
+### Compensating Transactions pattern
+
+Eventually consistent systems can make it difficult or impossible to roll back failed transactions.
+Instead, implement a transaction that undoes the effect of the failed transaction while taking
+account of any subsequent actions that may have taken place.
+
+> 📖 Read the full [Compensating Transactions pattern].
+
+### Choreography pattern
+
+Have multiple systems independently perform operations based on messages or events. Instead of
+having a single controller orchestrating everything, have each sub-component or microservice make
+its own decisions and perform its own operations. Each independent system may be processing data at
+different rates, and therefore may not have strong consistency with one another.
+
+> 📖 Read the full [Choreography pattern].
 
 ## Patterns to support partitioning
 * [Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
@@ -94,3 +105,5 @@ TODO below
 [Publisher-Subscriber pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber
 [Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
 [Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
+[Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
+[Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
