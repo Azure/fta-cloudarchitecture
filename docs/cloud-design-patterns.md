@@ -12,27 +12,72 @@ concepts we explored in the previous section.
 
 > 📖 See all of the design patterns in the [Azure Architecture Center's design patterns list].
 
-## Cloud economics and cost optimisation
+## Patterns to support cost optimisation
 
-* [Static Content Hosting pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting
-* [Cache-Aside pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/cache-aside
+### Static Content Hosting pattern
 
-## Elasticity and loose coupling
-* [Publisher-Subcriber pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber
-* [Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
-* [Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
-* [Async Request-Reply pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply
+The relative cost of storage is much lower than that of compute resources. One way to exploit this
+is to move static content into a storage system, or to use caching (e.g. Azure CDN) to store and
+re-serve data that does not change frequently. This is also a great way to increase the performance
+of an application by serving it from resources that are geographically closer to users, and by
+offloading the processing of these requests to dedicated services that are optimised for this task.
+
+> 📖 Read the full [Static Content Hosting pattern].
+
+### Compute Resource Consolidation pattern
+
+Increase the resource utilisation of compute resources by combining multiple workloads onto a single
+set of resources. This works particularly well for components that do not support high scale or have
+high resource requirements.
+
+> 📖 Read the full [Compute Resource Consolidation pattern].
+
+## Patterns to support elasticity and loose coupling
+
+### Async Request-Reply pattern
+
+Avoid having frontend hosts performing long-running tasks. Instead, have the frontend host initiate
+a background processor to complete the task, and allow the client to obtain the status of the task.
+
+> 📖 Read the full [Async Request-Reply pattern].
+
+### Publisher-Subscriber pattern
+
+Have application components publish messages into a message broker (often a queue, but not
+necessarily). Consumers then subscribe to that broker and receive messages as they are available.
+
+> 📖 Read the full [Publisher-Subscriber pattern].
+
+### Queue-based Load Leveling pattern
+
+Once a queue is employed (e.g. as per the [Publisher-Subscriber pattern]), the system processing
+messages from the queue can process at a consistent rate. This supports elastic scaling since new
+workers can be provisioned and deprovisioned based on queue length.
+
+> 📖 Read the full [Queue-based Load Leveling pattern].
+
+### Competing Consumers pattern
+
+Multiple workers can subscribe to a single queue. They 'compete' for messages, letting the queue
+deliver messages to each one, and can obtain further messages as they complete the processing of
+each message. This helps to balance the workload between workers.
+
+> 📖 Read the full [Competing Consumers pattern].
+
+TODO below
+
 * [Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
 
-## Eventual consistency
+## Patterns to support eventual consistency
 * [Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
+* Maybe CQRS, or event sourcing?
 
-## Partitioning
+## Patterns to support partitioning
 * [Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
 * [Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
 * [Geodes pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/geodes
 
-## Reliability and resiliency
+## Patterns to support reliability and resiliency
 * [Thottling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/throttling
 * [Retry pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/retry
 * [Circuit Breaker pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
@@ -43,3 +88,9 @@ concepts we explored in the previous section.
 [home]:/README.md
 [next]:./reliability.md
 [Azure Architecture Center's design patterns list]:https://docs.microsoft.com/en-us/azure/architecture/patterns/
+[Static Content Hosting pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting
+[Compute Resource Consolidation pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compute-resource-consolidation
+[Async Request-Reply pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply
+[Publisher-Subscriber pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber
+[Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
+[Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
