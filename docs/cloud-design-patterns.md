@@ -127,7 +127,7 @@ state.
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:/cloud-fundamentals.md
+[prev]:./cloud-fundamentals.md
 [home]:/README.md
 [next]:./reliability.md
 [Azure Architecture Center's design patterns list]:https://docs.microsoft.com/en-us/azure/architecture/patterns/
