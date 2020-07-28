@@ -103,9 +103,27 @@ instances.
 > 📖 Read the full [Deployment Stamps pattern].
 
 ## Patterns to support reliability and resiliency
-* [Thottling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/throttling
-* [Retry pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/retry
-* [Circuit Breaker pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
+
+While most of the patterns above are fairly high-level and apply at the level of an entire solution
+architecture, design patterns are also applicable at the level of code. It's also important to
+consider cloud architecture fundamentals when writing code, and the following patterns illustrate
+how this applies to increasing the resiliency of an application.
+
+## Retry pattern
+
+Have applications transparently retry failed operations. Cloud environments are subject to a number
+of sources of transient failures, and simply retrying operations will frequently allow the operation
+to succeed.
+
+> 📖 Read the full [Retry pattern].
+
+## Circuit Breaker pattern
+
+Implement a component that detects failures in downstream services and encapsulates the logic
+required to detect them being online again, as well as notifying consumers of the service's current
+state.
+
+> 📖 Read the full [Circuit Breaker pattern].
 
 > **[prev]** | **[home]**  | **[next]**
 
@@ -123,3 +141,5 @@ instances.
 [Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
 [Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
 [Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
+[Retry pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/retry
+[Circuit Breaker pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
