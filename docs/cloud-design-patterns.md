@@ -84,9 +84,23 @@ different rates, and therefore may not have strong consistency with one another.
 > 📖 Read the full [Choreography pattern].
 
 ## Patterns to support partitioning
-* [Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
-* [Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
-* [Geodes pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/geodes
+
+## Sharding pattern
+
+Divide data sources into horizontal partitions (shards) and store them in distinct databases or
+stores. This enables high levels of scale-out across independent sets of compute and storage
+resources.
+
+> 📖 Read the full [Sharding pattern].
+
+## Deployment Stamps pattern
+
+Deploy multiple instances of your solution, including compute resources and dedicated data stores.
+Direct specific customers (tenants) to specific stamps. This allows for running independent copies
+of your solution in different geographical regions, as well as running single- and multi-tenant
+instances.
+
+> 📖 Read the full [Deployment Stamps pattern].
 
 ## Patterns to support reliability and resiliency
 * [Thottling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/throttling
@@ -107,3 +121,5 @@ different rates, and therefore may not have strong consistency with one another.
 [Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
 [Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
 [Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
+[Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
+[Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
