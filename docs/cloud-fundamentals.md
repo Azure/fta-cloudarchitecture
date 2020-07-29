@@ -81,31 +81,12 @@ scaling to much lower cost, and elastically scaling up to higher tiers, as requi
 > 📖 Read more in [Azure Well-Architected Framework - Provision with optimization].
 
 ## Elasticity
-
 There are a number of workload patterns that make the best use of the economics and scale of the
-cloud:
+cloud. These all make use of the cloud's **elasticity**. The large pool of resources made available
+by cloud providers means that new resources can be provisioned right when they are required, used
+for as long as they are needed, and then deprovisioned.
 
-* **On and off:** some workloads only need to run for a small amount of time, such as batch jobs.
-  Provisioning dedicated infrastructure just for these is wasteful when the infrastructure is only
-  used intermittently.
-* **Growing fast:** workloads that scale up as the business grows will require more and more
-  infrastructure to run them. Without the cloud, it can be very hard to provision new hardware fast
-  enough to keep up with growing demand.
-* **Unpredictable bursting:** some workloads have unpredictable or unplanned burst in demand, such
-  as when a celebrity endorses a product on Twitter. Sudden spikes in load can impact performance
-  for everyone, and since the bursting is unpredictable we need the elasticity of the cloud in order
-  to rapidly provision new resources.
-* **Predictable bursting:** even when a workload's bursting is predictable and planned, such as
-  daily or seasonal peaks in traffic, it can be challenging to provision enough capacity for those
-  times while not wasting resources the rest of the time. The elasticity of the cloud allows for the
-  necessary resources to be provisioned when needed and then deprovisioned.
-
-![Cloud computing patterns](./images/cloud-computing-patterns.png)<br/>_Figure: Common workload
-patterns for the cloud._
-
-Each of these take advantage of **elasticity** - the ability to rapidly provision new resources.
-The large pool of resources made available by cloud providers means that new resources can be
-provisioned when they are required, used for as long as they are needed, and then deprovisioned.
+> Read more in [Azure Well-Architected Framework - Maximize efficiency of cloud spend].
 
 By taking advantage of elasticity you can keep your costs low initially as you build out your
 user base, while also rapidly responding to an influx of traffic or activity.
