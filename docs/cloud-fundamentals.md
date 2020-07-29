@@ -122,7 +122,7 @@ use of message brokers like Service Bus. Instead of sending requests directly be
 sender might instead sends a message to a broker and the destination system subscribes to the same
 broker. Messages are delivered through the broker, and regardless of how many instances of the
 sender or receiver there may be, the broker will handle reliable delivery to the correct recipients.
-One example of this type of design is the [Web-Queue-Worker architecture style].
+One example of this type of design is the [web-queue-worker architecture style].
 
 Another alternative, the [event-driven architecture style], can be used for components to publish
 information about actions that have taken place into a central event store. Other components can
@@ -237,17 +237,17 @@ partitioning are all interrelated:
 [prev]:./requirements.md
 [home]:/README.md
 [next]:./cloud-design-patterns.md
-[Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
-[Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
-[Azure Well-Architected Framework - Provision with optimization]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/3-provision-with-optimization
 [Application Architecture Guide - Autoscaling]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+[Application Architecture Guide - Data partitioning strategies]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies
 [Application Architecture Guide - Design to scale out]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/scale-out
 [Application Architecture Guide - Minimize coordination]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/minimize-coordination
-[Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
-[Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
-[CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
-[Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
-[Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
-[Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
-[Application Architecture Guide - Data partitioning strategies]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies
 [Application Architecture Guide - Partition around limits]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
+[Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
+[Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
+[Azure Well-Architected Framework - Provision with optimization]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/3-provision-with-optimization
+[Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
+[Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
+[CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
+[Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
+[Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
+[Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
