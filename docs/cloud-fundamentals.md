@@ -63,22 +63,12 @@ selection of technologies to suit the cloud pricing models.
 
 ### Cloud models
 
-Cloud providers like Azure also provide both managed and unmanaged components. For example, if you
-provision a VM to run your application, you are then opting into managing the VM yourself. This will
-involve installing your dependencies, keeping the VM and your dependencies patched, upgrading its
-operating system, deciding when and how to scale it, backing it up on a regular basis, and many
-other tasks.
+Consider different cloud hosting models. Managed services (also called Platform as a Service/PaaS,
+serverless, or Software as a Service) usually have much less ongoing maintenance and operation 
+required compared to unmanaged services (Infrastructure as a Service). Managed services often
+result in a lower total cost of ownership (TCO).
 
-In constrast, managed services take care of some or all of these concerns for you. The cloud vendor
-takes responsiblity for many aspects of the ongoing operation of the service. We typically think of
-these as platform-as-a-service (PaaS) or serverless offerings.
-
-When evaluating the cost of different services, it's important to consider the total cost of
-ownership (TCO). PaaS and serverless offerings typically have a lower TCO because of the significant
-reduction in administrative work and therefore operational expenditure. They also sometimes allow
-scaling to much lower cost, and elastically scaling up to higher tiers, as required.
-
-> 📖 Read more in [Azure Well-Architected Framework - Provision with optimization].
+> 📖 Read more in [Azure Well-Architected Framework - Managed services].
 
 ## Elasticity
 There are a number of workload patterns that make the best use of the economics and scale of the
@@ -244,7 +234,7 @@ partitioning are all interrelated:
 [Application Architecture Guide - Partition around limits]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
 [Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
 [Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
-[Azure Well-Architected Framework - Provision with optimization]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/3-provision-with-optimization
+[Azure Well-Architected Framework - Managed services]:https://docs.microsoft.com/en-us/azure/architecture/framework/cost/design-paas
 [Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
 [Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
 [CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
