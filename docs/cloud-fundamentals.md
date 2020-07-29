@@ -86,7 +86,7 @@ cloud. These all make use of the cloud's **elasticity**. The large pool of resou
 by cloud providers means that new resources can be provisioned right when they are required, used
 for as long as they are needed, and then deprovisioned.
 
-> Read more in [Azure Well-Architected Framework - Maximize efficiency of cloud spend].
+> 📖 Read more in [Azure Well-Architected Framework - Maximize efficiency of cloud spend].
 
 By taking advantage of elasticity you can keep your costs low initially as you build out your
 user base, while also rapidly responding to an influx of traffic or activity.
