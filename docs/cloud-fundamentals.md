@@ -71,6 +71,7 @@ result in a lower total cost of ownership (TCO).
 > 📖 Read more in [Azure Well-Architected Framework - Managed services].
 
 ## Elasticity
+
 There are a number of workload patterns that make the best use of the economics and scale of the
 cloud. These all make use of the cloud's **elasticity**. The large pool of resources made available
 by cloud providers means that new resources can be provisioned right when they are required, used
@@ -93,33 +94,12 @@ To make the most of the elasticity provided by the cloud there are a few things 
 > [Application Architecture Guide - Autoscaling].
 
 ## Loose coupling
+
 Any non-trivial solution will be made up of multiple components that work together. The
-communication and coupling between these components matters a great deal.
+communication and coupling between these components matters a great deal. In cloud architecture
+we prefer components that are loosely coupled, and that don't have strong dependencies on one
+another. This helps to improve:
 
-Synchronous communication is often the simplest approach to implement. It also is typically very
-performant, since messages are sent directly from point to point. This can be a good approach for
-simpler systems, or for communicating between two parts of a solution that are highly
-interdependent - for example, talking from an application to a database or cache.
-
-However, in some situations tight coupling will lead to problems. Any downstream delays, failures,
-or bottlenecks can cause your entire solution's performance to be degraded. Also, tight coupling
-means that the sender needs to know the exact location to send a request to (e.g. an IP address,
-port, or hostname). If we are using horizontal scaling in our solution then it can be difficult to
-keep track of which compute nodes might currently be running the component we need to talk to.
-
-Loose coupling, on the other hand, typically involves asynchronous communication. It often makes
-use of message brokers like Service Bus. Instead of sending requests directly between systems, the
-sender might instead sends a message to a broker and the destination system subscribes to the same
-broker. Messages are delivered through the broker, and regardless of how many instances of the
-sender or receiver there may be, the broker will handle reliable delivery to the correct recipients.
-One example of this type of design is the [web-queue-worker architecture style].
-
-Another alternative, the [event-driven architecture style], can be used for components to publish
-information about actions that have taken place into a central event store. Other components can
-listen to the events coming from that store, and can decide independently when they might want to
-take action.
-
-Loose coupling has some important benefits for resiliency and elasticity.
 * **Resiliency:** loose coupling means there is a buffer between your solution components to
   protect them one another's failures. This typically increases the resiliency of the overall
   solution.
@@ -127,7 +107,22 @@ Loose coupling has some important benefits for resiliency and elasticity.
   additional compute workers and removing unnecessary compute workers can be achieved without
   upstream systems needing to be aware of the scaling.
 
-> 📖 Read more in [Application Architecture Guide - Minimize coordination].
+There are some key approaches that we use in the cloud to take advantage of loose coupling.
+
+One approach is to use request queuing and batching.  This can be done as the basis of a whole
+solution's design (e.g. the [web-queue-worker architecture style]), or you can adopt queues at
+strategic points within any architecture.
+
+> 📖 Read more about queuing in 
+> [Azure Well-Architected Framework - App design for performance efficiency].
+
+Another approach for a loosely coupled solution architecture is the
+[Event-driven architecture style]. In these architectures, subcomponents or microservices publish
+events, and other parts of the system listen to those events and perform their own actions
+independently.
+
+> 📖 Read more in the [Azure Well-Architected Framework - Performance efficiency pillar] and 
+> [Application Architecture Guide - Minimize coordination].
 
 ## Eventual consistency
 
@@ -182,6 +177,7 @@ example:
 * Some data stores, such as Cosmos DB, support multi-region writes. These writes are synchronised
   across all of the regions that contain the database, but the synchronisation process is
   asynchronous and eventually consistent.
+* Eventual consistency can minimise the need for locks, which in turn can increase the throughput of your application (https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/app-design#data-locking).
 
 Many solutions need a mixture of consistency levels for different parts of their solution. For
 example, you might need strong consistency within a transactional system but eventual consistency
@@ -234,10 +230,13 @@ partitioning are all interrelated:
 [Application Architecture Guide - Partition around limits]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
 [Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
 [Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
+[Azure Well-Architected Framework - App design for performance efficiency]:https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/app-design#queuing-and-batching-requests
 [Azure Well-Architected Framework - Managed services]:https://docs.microsoft.com/en-us/azure/architecture/framework/cost/design-paas
 [Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
+[Azure Well-Architected Framework - Performance efficiency pillar]:https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/overview
 [Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
 [CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
+[Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
