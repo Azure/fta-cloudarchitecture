@@ -12,6 +12,8 @@ This presentation and content is written and delivered by FastTrack for Azure en
 
 Hopefully the richness of our content will make up for our lack of presentation skills (we often don't use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest views on the good, the bad, the ugly.
 
+> 📖 Visit **[Microsoft FastTrack for Azure]** to learn more about FastTrack
+
 ## Azure Well-Architected Framework
 
 FastTrack for Azure team are contributors to the [Azure Architecture Center] which contains several excellent resources for Architects including [Application Architecture Guide], [Cloud Adoption Framework] and [Well-Architected Framework]. All of the architecture advice given by FastTrack in 1:1 or 1:many sessions is backed by the patterns and practices in these guides. In this presentation we will focus on the [Well-Architected Framework] (although we recommend you study them all).
@@ -109,3 +111,4 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 [Pluralsight]:https://www.pluralsight.com/browse/cloud-computing
 [Build great solutions with the Microsoft Azure Well-Architected Framework]:https://docs.microsoft.com/en-us/learn/paths/azure-well-architected-framework/
 [Introduction to the Microsoft Azure Well-Architected Framework]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/
+[Microsoft FastTrack for Azure]:https://azure.microsoft.com/en-us/programs/azure-fasttrack/
