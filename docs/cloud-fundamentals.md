@@ -188,14 +188,6 @@ for other components too. For example, you might horizontally scale your entire 
 deploying a second instance, or you might deploy dedicated compute resources for high-volume
 customers while having low-volume customers share the same set of compute resources.
 
-It's also important to understand that elasticity, loose coupling, eventual consistency, and
-partitioning are all interrelated:
-* Loosely coupling your components implies you need eventual consistency between those components.
-* Elasticity is easier to achieve when your systems are loosely coupled.
-* Asynchronous communication is used to achieve loose coupling, and this imnplies eventual
-  consistency while enabling elastic scaling.
-* Partitioning allows you to make use of elastic scaling to quickly scale horizontally.
-
 > **[prev]** | **[home]**  | **[next]**
 
 [prev]:./requirements.md
