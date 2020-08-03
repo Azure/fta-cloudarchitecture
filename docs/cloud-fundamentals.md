@@ -83,6 +83,7 @@ By taking advantage of elasticity you can keep your costs low initially as you b
 user base, while also rapidly responding to an influx of traffic or activity.
 
 To make the most of the elasticity provided by the cloud there are a few things you can do such as:
+* Prefer scaling out rather than scaling up.
 * Prefer stateless applications wherever possible, so that you can rapidly shift your traffic
   around and don't have to pin specific requests to specific compute instances.
 * Avoid having bottlenecks that might inhibit your ability to scale out quickly.
@@ -90,7 +91,8 @@ To make the most of the elasticity provided by the cloud there are a few things 
 * Configure auto-scaling on your resources so that you can quickly scale even with unpredictable
   bursting.
 
-> 📖 Read more in [Application Architecture Guide - Design to scale out] and
+> 📖 Read more in [Azure Well-Architected Framework - Scaling up and scaling out],
+> [Application Architecture Guide - Design to scale out], and
 > [Application Architecture Guide - Autoscaling].
 
 ## Loose coupling
@@ -142,9 +144,11 @@ data stores than to perform transactional writes across regions. This is very im
 a database like Cosmos DB, which supports multi-region writes.
 
 By taking advantage of eventual consistency you can also make use of caching, which can help to
-avoid unnecessary queries and operations against your data stores.
+avoid unnecessary queries and operations against your data stores. Caching can be done within your
+application or at the network edge using a CDN.
 
-> 📖 Read more about caching in [Azure Architecture Center - Caching best practice].
+> 📖 Read more about caching in [Azure Architecture Center - Caching best practice] and
+> [Azure Well-Architected Framework - Use a CDN].
 
 Many solutions need a mixture of consistency levels for different parts of their solution. For
 example, you might need strong consistency within a transactional system but eventual consistency
@@ -205,6 +209,8 @@ customers while having low-volume customers share the same set of compute resour
 [Azure Well-Architected Framework - Managed services]:https://docs.microsoft.com/en-us/azure/architecture/framework/cost/design-paas
 [Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
 [Azure Well-Architected Framework - Performance efficiency pillar]:https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/overview
+[Azure Well-Architected Framework - Scaling up and scaling out]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-performance-efficiency/2-scaling-up-and-scaling-out
+[Azure Well-Architected Framework - Use a CDN]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-performance-efficiency/3-optimize-network-performance#use-a-cdn-to-cache-content-close-to-users
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
