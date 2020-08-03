@@ -126,37 +126,37 @@ independently.
 
 ## Eventual consistency
 
-In traditional networks and environments, applications were typically built to expect their data
-stores to have _strong consistency_ - in other words, to have the most recent data available at all
-times, and for changes to data to be instantly persisted and available everywhere. This suited
-solutions that ran in a single data centre. However, cloud solutions can often require us to
-reconsider whether strong consistency is truly necessary.
+When designing a cloud solution, consider whether _eventual consistency_ is possible. In an
+eventually consistent data store, copies of the data become consistent over time, but for some
+period they might be out of sync with recent changes from other systems.
 
-In cloud environments, we need to consider both the consistency and the availability of our systems,
-as well as its performance and throughput. The [CAP theorem] states that high consistency and high
-availability need to be balanced against each other and that there is a trade-off between the two.
+Eventual consistency can minimise the need for locks, which means your application can typically
+support a higher request throughput.
 
-We may require our components to be networked across geographical regions, such as for high
-availability or disaster recovery. Connections between regions involve a certain amount of latency
-simply due to the speed of light. If we need to synchronise or replicate our data across the world,
-then strong consistency will require a significant amount of time to complete each transaction. Each
-transaction will need to synchronously update all of the replicas and wait for confirmation, which
-could be very slow and impact the overall throughput of our system.
+> 📖 Read more about data locking in 
+> [Azure Well-Architected Framework - App design for performance efficiency].
 
-Instead, consider whether _eventual consistency_ is possible. In an eventually consistent store,
-systems coordinate with each other and their data stores eventually will be consistent with one
-another; but for some period of time (usually seconds or a few minutes, but sometimes longer) they
-might be out of sync with recent changes from other systems. This can seem like a major problem, but
-in fact many workloads suit this pattern quite well.
+It also means that you can replicate your data out to another availability zone or region.
+Networking introduces delays, and it is more efficient for a background process to synchronise your
+data stores than to perform transactional writes across regions. This is very important when using
+a database like Cosmos DB, which supports multi-region writes.
 
-Eventual consistency is also important for synchronising data between two different systems. For
-example, consider a sales system that replicates sales data out to a reporting system. If this is
-done in real-time and with strong consistency then the reporting system will always be completely
-accurate, but at the cost of strongly coupling the two systems together, and at a longer transaction
-time and reduced transaction throughput since transactions have to be committed by two different
-systems. In most scenarios, though, the sales data is actually not fully analysed for several
-minutes, or even until the next business day, and so the performance trade-offs of eventual
-consistency are justified.
+By taking advantage of eventual consistency you can also make use of caching, which can help to
+avoid unnecessary queries and operations against your data stores.
+
+> 📖 Read more about caching in [Azure Architecture Center - Caching best practice].
+
+Many solutions need a mixture of consistency levels for different parts of their solution. For
+example, you might need strong consistency within a transactional system but eventual consistency
+for replicas across regions, or to synchronise data to an analytics system or third party. Having
+clear requirements from business stakeholders is critical to making an informed decision on
+consistency levels.
+
+Some data stores, like Cosmos DB, let you control the consistency level at the transaction level to
+meet your requirements.
+
+> 📖 Read more about data store and consistency level selection in
+> [Application Architecture Guide - Use the best data store for the job].
 
 Some architectural styles require the use of eventual consistency. For example, a microservices
 architecture or an event-driven architecture each involve independent systems, which typically have
@@ -165,28 +165,6 @@ performance.
 
 > 📖 Read more about data store selection for microservices architectures in the
 > [Azure Architecture Center - Data considerations for microservices].
-
-Even within more typical architectures, eventual consistency will still be a useful principle. For
-example:
-* [Caching] typically involves a data store (a _cache_) maintaining a copy of data so that
-  subsequent requests do not need to go back to the data store or application. The cache will often
-  be refreshed at a defined interval, and changes that happen within that cached data interval may
-  not be visible to consumers until the cache is refreshed.
-* Geo-replication of data is almost always done asynchronously, and the secondary replicas will
-  therefore be eventually consistent.
-* Some data stores, such as Cosmos DB, support multi-region writes. These writes are synchronised
-  across all of the regions that contain the database, but the synchronisation process is
-  asynchronous and eventually consistent.
-* Eventual consistency can minimise the need for locks, which in turn can increase the throughput of your application (https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/app-design#data-locking).
-
-Many solutions need a mixture of consistency levels for different parts of their solution. For
-example, you might need strong consistency within a transactional system but eventual consistency
-for replicas across regions, or to synchronise data to an analytics system or third party. Some data
-stores, like Cosmos DB, let you control the consistency level at the transaction level to meet your
-requirements.
-
-> 📖 Read more about data store and consistency level selection in
-> [Application Architecture Guide - Use the best data store for the job].
 
 ## Partitioning
 
@@ -229,13 +207,12 @@ partitioning are all interrelated:
 [Application Architecture Guide - Minimize coordination]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/minimize-coordination
 [Application Architecture Guide - Partition around limits]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/partition
 [Application Architecture Guide - Use the best data store for the job]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/use-the-best-data-store
+[Azure Architecture Center - Caching best practice]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
 [Azure Architecture Center - Data considerations for microservices]:https://docs.microsoft.com/en-us/azure/architecture/microservices/design/data-considerations
-[Azure Well-Architected Framework - App design for performance efficiency]:https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/app-design#queuing-and-batching-requests
+[Azure Well-Architected Framework - App design for performance efficiency]:https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/app-design
 [Azure Well-Architected Framework - Managed services]:https://docs.microsoft.com/en-us/azure/architecture/framework/cost/design-paas
 [Azure Well-Architected Framework - Maximize efficiency of cloud spend]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-cost-optimization/5-maximize-efficiency-of-cloud-spend
 [Azure Well-Architected Framework - Performance efficiency pillar]:https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/overview
-[Caching]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching#caching-and-eventual-consistency
-[CAP theorem]:https://en.wikipedia.org/wiki/CAP_theorem
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
