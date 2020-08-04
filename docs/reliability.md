@@ -76,9 +76,19 @@ Once the target SLA requirements have been determined an _Architecture review_ s
 
 It is important to review the SLA's of the solution as a whole, as well as the SLA's for individual services. Annotate the solution architecture diagram with SLA, RTO and RPO for all components. Single points of failure should be called out, and the composite SLA for the solution should be calculated by combining the SLA for each service.
 
-![Annotated AKS API First reference architecture](./images/annotated-aks-api-first.png)
+As an example, the [API-first SaaS business model] reference architecture has been annotated with uptime, RTO and RPO figures below.
 
-For example, the uptime SLA's for each component in the _critical path_ of a solution should be multiplied together to calculate the _composite SLA_. 
+![Annotated AKS API First reference architecture](./images/annotated-aks-api-first.png) <br/> _Figure: Annotated API-first SaaS business model reference architecture_
+
+The uptime SLA's for each component in the _critical path_ of a solution should be multiplied together to calculate the _composite SLA_.
+
+**Q. What is the composite uptime SLA for the solution above?** (From the point of view of an API user)
+
+1. 99.995%?
+1. 99.9%?
+1. Less than 99.9%?
+
+How could the uptime be improved?
 
 > 🔨 Use the **[Composite SLO Estimation spreadsheet]** to calculate composite SLO
 
@@ -90,8 +100,9 @@ Azure PaaS services provide _features_ for availability and recovery. Some featu
 
 | Service | HA features | Recovery features | AZ support |
 | ------- | ----------- | ----------------- | ---------- |
-| Azure App Services | <ul><li>[99.95% uptime](https://azure.microsoft.com/en-au/support/legal/sla/app-service/v1_4/)</li><li>[Deployment (Swap) Slots]</li></ul> | [Scheduled backups](https://docs.microsoft.com/en-us/azure/app-service/manage-backup#configure-automated-backups) | Zonal |
+| Azure App Services | <ul><li>[99.95% uptime](https://azure.microsoft.com/en-au/support/legal/sla/app-service/v1_4/)</li><li>[Deployment (Swap) Slots]</li></ul> | [Scheduled backups](https://docs.microsoft.com/en-us/azure/app-service/manage-backup#configure-automated-backups) | [Zonal for ASE's](https://docs.microsoft.com/en-us/azure/app-service/environment/zone-redundancy) |
 | Azure SQL DB | <ul><li>[Uptime SLA](https://azure.microsoft.com/en-au/support/legal/sla/sql-database/v1_4/) of between 99.9% and 99.995% depending on SKU, tier and configuration.</li><li>[Active Geo replication](https://docs.microsoft.com/en-us/azure/azure-sql/database/active-geo-replication-overview)</li><li>[Failover groups](https://docs.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-overview?tabs=azure-powershell)</li></ul> | [Automated backups and Point in time restore](https://docs.microsoft.com/en-us/azure/azure-sql/database/automated-backups-overview?tabs=single-database) | Zone redundant |
+| Azure API Management | <ul><li>[99.95% uptime SLA](https://azure.microsoft.com/en-au/support/legal/sla/api-management/v1_4/)</li><li>99.99% uptime with [multi-region deployment](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-deploy-multi-region)</li></ul> | [Backup & restore](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-disaster-recovery-backup-restore) | 
 
 
 
@@ -149,3 +160,4 @@ In the [Cloud Design Patterns] section of this 1:many session you were introduce
 [Composite SLO Estimation spreadsheet]:/tools/Composite_SLO_Estimation_Tool.xlsx
 [Zonal or zone-redundant architecture]:https://docs.microsoft.com/en-us/azure/architecture/high-availability/building-solutions-for-high-availability#zonal-vs-zone-redundant-architecture
 [Deployment (Swap) Slots]:https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots#swap-two-slots
+[API-first SaaS business model]:https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/aks-api-first
