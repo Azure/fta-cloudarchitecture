@@ -2,6 +2,7 @@
 
 > **[prev]** | **[home]**  | **[next]**
 
+👷🏻‍♂️🚧👷🏻‍♀️ (WIP)
 Running a solution in the cloud doesn't reduce the need for your requirements to be clear. In fact, the flexibility and power provided by the cloud means that it's even more important to have clear requirements from business stakeholders; otherwise, you could end up solving for problems that don't exist, missing an important design decision, or going beyond the available budget by adding unnecessary resiliency.
 
 Some key requirements that should be gathered upfront include:
