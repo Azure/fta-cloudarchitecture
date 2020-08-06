@@ -4,7 +4,7 @@
 
 Building a reliable application in the cloud is different from traditional application development. While historically you may have purchased levels of redundant higher-end hardware to minimize the chance of an entire application platform failing, in the cloud, we acknowledge up front that failures will happen. Instead of trying to prevent failures altogether, the goal is to minimize the effects of a single failing component.
 
-## Microsoft Well-architected Framework - Reliability pillar
+## Well-architected framework
 
 > 📖 Read [Overview of the reliability pillar]
 
@@ -20,64 +20,64 @@ Moving to the cloud introduces a model of [shared responsibility]. In this model
 
 In this model Microsoft Azure take a large part of the responsibility for reliability for PaaS, but not all. Architects need to clearly understand what the customer's responsibilities are in this model. For example:
 
-Customers using PaaS platforms are responsible for:
+#### Customers' responsibilities include:
 
-* Understanding the Service Level Agreement (SLA) details and failure modes for each PaaS service deployed
-* Enabling the appropriate reliability features that meet business requirements
-* Understanding the RTO, RPO and uptime of each service
-* Designing solutions that avoid single points of failure
-* Understanding the _composite uptime_ of the system
-* Following best practices for each Platform service
-* Employing [Cloud Design Patterns] for reliability
-* Taking Azure Platform and SDK updates within a reasonable period of time
+* Understanding service level agreements (SLAs) and _failure modes_
+* Understanding [Azure subscription and service limits, quotas, and constraints]
+* Enabling appropriate availability and recovery features
+* Avoiding single points of failure
+* Understanding _composite uptime_
+* Following best practices for each service 
+* Employing [cloud design patterns] for resilience and availability
+* Keeping Azure software libraries up to date, including frameworks and client SDKs
 
-## High Availability, Business Continuity & Disaster Recovery
+## High availability, business continuity & disaster recovery
 
-Definitions for High availability (HA), Business Continuity and Disaster recovery (BC/DR) can vary from organisation to organisation and even from team to team. The [Well Architected Framework] focuses on _reliability_ as an overarching theme.
+Definitions for High availability (HA), Business Continuity and Disaster recovery (BC/DR) can vary from organisation to organisation and even from team to team. The [Well-architected framework] focuses on _reliability_ as an overarching theme.
 
 Architecting for reliability ensures that your application can meet the commitments you make to your customers. This includes ensuring that your systems are _available_ to end users and can _recover_ from any failures.
 
-## RTO, RPO, Uptime
+## Uptime, RTO, RPO
 
 Every application, service, platform and system has a stated or implied RTO, RPO and uptime. 
 
-**Uptime**: The target uptime for a system is usually measured as a percentage. For example, [99.9% uptime] equates to 43 minutes and 49 seconds of downtime per month. "Downtime" can be measured in various ways, but usually means that the service is not responding to repeated requests.
+* **Uptime**: The target uptime for a system is usually measured as a percentage. For example, [99.9% uptime] equates to 43 minutes and 49 seconds of downtime per month. "Downtime" can be measured in various ways, but usually means that the service is not responding to repeated requests.
+* **Recovery time objective (RTO)**: The maximum duration of acceptable downtime, where "downtime" is defined by your specification. For example, if the acceptable downtime duration is eight hours in the event of a disaster, then your RTO is eight hours.
+* **Recovery point objective (RPO)**: The maximum duration of acceptable data loss. RPO is measured in units of time, not volume. Examples are "30 minutes of data," "four hours of data," and so on.
 
-**Recovery time objective (RTO)**: The maximum duration of acceptable downtime, where "downtime" is defined by your specification. For example, if the acceptable downtime duration is eight hours in the event of a disaster, then your RTO is eight hours.
-
-**Recovery point objective (RPO)**: The maximum duration of acceptable data loss. RPO is measured in units of time, not volume. Examples are "30 minutes of data," "four hours of data," and so on.
-
-## Azure Service-level agreement's
-
-> 📖 Familiarize yourself with [Azure Service-level agreements].
-
-> 📺 Watch [SLIs, SLOs, SLAs, oh my!] for a definition of these terms and an explanation of the differences.
-
-* An Azure Service-level Agreement (SLA) can also be read as a minimum Service-level Objective (SLO).
-* An SLA is a financial guarantee, not an absolute guarantee
-* Read the SLA details carefully, particularly the definition of "Downtime" for each service, which give important hints about _failure modes_
-
-For example, in the [SLA for Azure SQL Database], "Downtime" is:
-
-_"The total accumulated Deployment Minutes across all Databases in a given Microsoft Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if **all continuous attempts by Customer to establish a connection to the Database** within the minute fail."_
-
-The Azure SQL Database team expect almost all outages to be transient (brief and non-recurring). Therefore the _Retry_ pattern should be used to continuously retry for up to a minute. This is typical in cloud services; retry has been the default behaviour in ADO.NET since .NET Framework 4.6.1.
-
-## Determine the SLA of your application
+### Determine the SLA of your application
 
 > 📖 Study [Determine the service-level agreement of your application] on Microsoft Learn
 
-RTO, RPO and uptime are important business (non-functional) requirements. It is important the business are consulted when determining these requirements. There is a strong relationship between uptime, complexity and cost for example.
+* Uptime, RTO and RPO are important business (non-functional) requirements 
+* The business should be consulted when determining these requirements 
+* There is a strong relationship between uptime, complexity and cost
+
+## Azure SLAs
+
+> 📖 Familiarize yourself with [Azure service-level agreements].
+
+> 📺 Watch [SLIs, SLOs, SLAs, oh my!] for a definition of these terms and an explanation of the differences.
+
+* An Azure Service-level Agreement (SLA) can also be read as a minimum service-level objective (SLO).
+* An SLA is a financial guarantee, not an absolute guarantee
+* Read the SLA details carefully, particularly the definition of "downtime" for each service, which give important hints about _failure modes_
+
+For example, in the [SLA for Azure SQL Database], "downtime" is defined as:
+
+_"The total accumulated Deployment Minutes across all Databases in a given Microsoft Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if **all continuous attempts by Customer to establish a connection to the Database** within the minute fail."_
+
+The Azure SQL Database team expect almost all outages to be transient (brief and non-recurring). Therefore the _retry_ pattern should be used to continuously retry for up to a minute. This is typical in cloud services; retry has been the default behaviour in ADO.NET since .NET Framework 4.6.1.
 
 ## Architecture review
 
 Once the target SLA requirements have been determined, an _Architecture review_ should be performed to ensure that these requirements are met. 
 
-> 💡 [FastTrack for Azure] can perform an architecture review of your solution on behalf of Microsoft Azure Engineering
+> 💡 [Microsoft FastTrack for Azure] can perform an architecture review of your solution on behalf of Microsoft Azure Engineering
 
 > 🔨 Use the [Composite SLO Estimation spreadsheet] to calculate a system's composite SLO for uptime.
 
-> 📖 FastTrack have published a [Solution Review and Guidance Framework] for Architecture Reviews.
+> 📖 FastTrack have published a [Solution review and guidance framework] for architecture reviews.
 
 ### Annotate the architecture diagram
 
@@ -114,15 +114,15 @@ Take time to review and understand the availability and recovery features of eac
 | Azure Cosmos DB | <ul><li>99.99% uptime [SLA](https://azure.microsoft.com/en-us/support/legal/sla/cosmos-db/v1_3/)</li><li>[Multi-region](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account#addremove-regions-from-your-database-account), [Multi-write regions](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account#configure-multiple-write-regions) (99.999% uptime SLA)</li></ul> | [Automatic and online backups](https://docs.microsoft.com/en-us/azure/cosmos-db/online-backup-and-restore) RPO: 4 hours<br/>[Multi-region](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account#addremove-regions-from-your-database-account) RPO: 0 | [Zone redundant](https://docs.microsoft.com/en-us/azure/cosmos-db/high-availability#availability-zone-support) |
 | Azure Storage | <ul><li>99.9% write, 99.99% read uptime [SLA](https://azure.microsoft.com/en-us/support/legal/sla/storage/v1_5/)</li><li>[LRS](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#locally-redundant-storage), [ZRS](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#zone-redundant-storage)</li><li>[RA-GRS, RA-GZRS](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#read-access-to-data-in-the-secondary-region)</li></ul> | [Geo-redundant storage (GRS, GZRS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#geo-redundant-storage) <br/>RPO: 10 minutes | Zone redundant |
 
-## Multi-AZ, Multi-region deployments
+### Multi-region deployments
 
-Most availability requirements can be met in a single Azure Region with Availability Zones. For systems that require an extraordinary level of availability (or scalability) a multi-region deployment may be considered. 
+Most availability requirements can be met in a single Azure region with Availability Zones. For systems that require an extraordinary level of availability (or scalability) a multi-region deployment may be considered. 
 
 > ℹ Contact **[Microsoft FastTrack for Azure]** for advice on multi region design and deployment.
 
-## Resiliency
+## Resiliency patterns
 
-At the application layer, software engineers should learn and understand [cloud design patterns] that improve resiliency. Successfully implementing patterns like _[retry]_, _[circuit breaker]_, failover and _[queue based load leveling]_ can have a significant impact on reliability.
+Employ [resiliency patterns] at the application layer. [Cloud design patterns] like _retry_, _circuit breaker_, _failover_ and _queue based load leveling_ can have a significant positive impact on reliability.
 
 > **[prev]** | **[home]**  | **[next]**
 
@@ -148,3 +148,5 @@ At the application layer, software engineers should learn and understand [cloud 
 [API-first SaaS business model]:https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/aks-api-first
 [Overview of the reliability pillar]:https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/overview
 [shared responsibility]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/2-pillars#shared-responsibility
+[Well-architected framework]:https://docs.microsoft.com/en-us/azure/architecture/framework
+[Azure subscription and service limits, quotas, and constraints]:https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits

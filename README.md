@@ -60,11 +60,13 @@ This 90 minute 1:many session we will run like this. Each top-level section will
     * Eventual consistency
     * **[Cloud design patterns](./docs/cloud-design-patterns.md)**
 1. **[Reliability](./docs/reliability.md)**
+    * Well architected framework
     * Shared responsibility
-    * HA vs DR
-    * RTO, RPO, Uptime
-    * Service Level Agreements (SLAs)
-    * Availability & recovery features
+    * HA, BC/DR
+    * Uptime, RTO, RPO
+    * Azure SLAs
+    * Architecture review
+    * Resiliency patterns
 1. **Final question time and wrap**
 
 
