@@ -50,7 +50,7 @@ This 90 minute 1:many session will run like this. Each top-level section will ru
    * Architecture design session
    * Architecture review session
    * Relative cost to fix
-1. **[Azure architecture center](./docs/well-architected.md)**
+1. **[Azure architecture center](./docs/azure-architecture-center.md)**
    * Application architecture guide
    * Well-architected framework
    * Cloud adoption framework
