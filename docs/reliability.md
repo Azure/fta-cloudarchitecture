@@ -128,7 +128,7 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 
 [prev]:./cloud-design-patterns.md
 [home]:/README.md
-[next]:./performance.md
+[next]:/README.md
 [Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/
 [Availability patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/availability
 [Resiliency patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/resiliency
