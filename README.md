@@ -1,6 +1,6 @@
-# FastTrack for Azure: Well-Architected
+# FastTrack for Azure: Cloud architecture
 
-This is the companion repo for the _Well-Architected 1:many session_ run periodically by the FastTrack for Azure team. This repo contains the presentation material and other assets for this 90 minute session.
+This is the companion repo for the _Cloud architecture 1:many session_ run periodically by the Microsoft FastTrack for Azure team. This repo contains the presentation material and other assets for this session.
 
 > For more information about the FastTrack for Azure team and 1:many sessions, visit [Azure.com/FastTrack].
 
@@ -8,11 +8,11 @@ This presentation is about Architecture design in the Cloud. This is important b
 
 ## 1:many sessions
 
-This presentation and content is written and delivered by FastTrack for Azure engineers who work closely with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and most critical workloads deployed into Public Cloud today. Our goal in a _1:many_ session is to pass on generalized advice based on "real world" experience delivering thousands of engagements and hundreds of successful production deployments in Azure.
+This presentation and content is written and delivered by Microsoft FastTrack for Azure engineers who work closely with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and critical workloads deployed into public cloud today. Our goal in a _1:many_ session is to pass on generalized advice based on "real world" experience delivering thousands of engagements and hundreds of successful production deployments in Azure.
 
 Hopefully the richness of our content will make up for our lack of presentation skills (we often don't use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest views on the good, the bad, the ugly.
 
-> 📖 Visit **[Microsoft FastTrack for Azure]** to learn more about FastTrack
+> 📖 Visit [Microsoft FastTrack for Azure] to learn more about FastTrack
 
 ## Azure Well-Architected Framework
 
@@ -24,8 +24,7 @@ By the end of this session we hope you will have a clear understanding of:
 
 * What it means to be an architect of solutions in the cloud
 * How cloud architecture is different from traditional forms of architecture, and where it is the same
-* To demonstrate how engineers and architects can use the [Azure Architecture Center], the [Well-Architected
-  Framework] and the [Cloud Adoption Framework] in their daily work
+* To demonstrate how engineers and architects can use the [Azure Architecture Center], the [Well-Architected Framework] and the [Cloud Adoption Framework] in their daily work
 * To familiarise Engineers and Architects with training resources like [Microsoft Learn]
 
 ## Who Should Attend?
@@ -34,14 +33,13 @@ Any engineer or architect who is involved in the design of cloud solutions and/o
 
 ## What are the prerequisites?
 
-* Complete the [Introduction to the Microsoft Azure Well-Architected Framework] module in Microsoft
-  Learn
+* Complete the [Introduction to the Microsoft Azure Well-Architected Framework] module in Microsoft Learn
 * Familiarize yourself with the [Azure Architecture Center]
 * Consider guided learning paths like [Microsoft Learn], [LinkedIn Learning] and [Pluralsight]
 
 ## Session Outline
 
-This 90 minute 1:many session we will run like this. Each top-level section will run for about 10 minutes.
+This 90 minute 1:many session will run like this. Each top-level section will run for about 10 minutes.
 
 1. **Welcome, introductions**
    * About FastTrack for Azure
@@ -52,7 +50,10 @@ This 90 minute 1:many session we will run like this. Each top-level section will
    * Architecture design session
    * Architecture review session
    * Relative cost to fix
-1. **[Well Architected Framework]**
+1. **[Azure architecture center](./docs/well-architected.md)**
+   * Application architecture guide
+   * Well-architected framework
+   * Cloud adoption framework
 1. **[Cloud fundamentals](./docs/cloud-fundamentals.md)**
     * (Cloud economics)
     * Elasticity
@@ -68,7 +69,6 @@ This 90 minute 1:many session we will run like this. Each top-level section will
     * Architecture review
     * Resiliency patterns
 1. **Final question time and wrap**
-
 
 <!-- 
 1. **[Requirements, requirements, requirements](./docs/requirements.md)**
