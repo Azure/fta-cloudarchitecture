@@ -52,28 +52,32 @@ This 90 minute 1:many session we will run like this. Each top-level section will
    * Architecture design session
    * Architecture review session
    * Relative cost to fix
+1. **[Well Architected Framework]**
+1. **[Cloud fundamentals](./docs/cloud-fundamentals.md)**
+    * (Cloud economics)
+    * Elasticity
+    * Loose coupling
+    * Eventual consistency
+    * **[Cloud design patterns](./docs/cloud-design-patterns.md)**
+1. **[Reliability](./docs/reliability.md)**
+    * Shared responsibility
+    * HA vs DR
+    * RTO, RPO, Uptime
+    * Service Level Agreements (SLAs)
+    * Availability & recovery features
+1. **Final question time and wrap**
+
+
+<!-- 
 1. **[Requirements, requirements, requirements](./docs/requirements.md)**
     * Bringing business requirements to the design process
     * Service selection
     * Requirements mapping to features
     * What's important to various Personas
     * What about security?
-1. **[Cloud fundamentals](./docs/cloud-fundamentals.md)**
-    * Cloud economics
-    * Elasticity
-    * Loose coupling
-    * Eventual consistency
-1. **[Cloud design patterns](./docs/cloud-design-patterns.md)**
-1. **[Reliability](./docs/reliability.md)**
-    * Well-Architected review demo 
-    * SLA, SLO, SLI oh my!
-    * Composite SLA
-    * Failure modes
-    * Run books
-    * Automate all the things
-1. **[Performance & cost optimisation](./docs/performance.md)**
-1. **[Operational excellence](./docs/ops.md)**
-1. **Final question time and wrap**
+-->
+<!-- 1. **[Performance & cost optimisation](./docs/performance.md)** -->
+<!-- 1. **[Operational excellence](./docs/ops.md)** -->
 
 ## Links
 
