@@ -262,9 +262,9 @@ customers while having low-volume customers share the same set of compute resour
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:./requirements.md
+[prev]:./azure-architecture-center.md.md
 [home]:/README.md
-[next]:./cloud-design-patterns.md
+[next]:./reliability.md
 [Application Architecture Guide - Autoscaling]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
 [Application Architecture Guide - Data partitioning strategies]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies
 [Application Architecture Guide - Design to scale out]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/scale-out

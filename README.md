@@ -55,11 +55,11 @@ This 90 minute 1:many session will run like this. Each top-level section will ru
    * Well-architected framework
    * Cloud adoption framework
 1. **[Cloud fundamentals](./docs/cloud-fundamentals.md)**
-    * (Cloud economics)
+    * Cloud economics
     * Elasticity
     * Loose coupling
     * Eventual consistency
-    * **[Cloud design patterns](./docs/cloud-design-patterns.md)**
+    * Partitioning
 1. **[Reliability](./docs/reliability.md)**
     * Well architected framework
     * Shared responsibility
