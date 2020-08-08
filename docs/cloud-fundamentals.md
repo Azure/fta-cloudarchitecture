@@ -283,3 +283,11 @@ customers while having low-volume customers share the same set of compute resour
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
+[Static Content Hosting pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting
+[Async Request-Reply pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply
+[Publisher-Subscriber pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber
+[Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
+[Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
+[Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
+[Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
+[Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
