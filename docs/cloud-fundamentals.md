@@ -81,6 +81,18 @@ result in a lower total cost of ownership (TCO).
 
 > 📖 Read more in [Azure Well-Architected Framework - Managed services].
 
+### Shared responsibility
+
+Moving to the cloud introduces a model of [shared responsibility]. In this model, your cloud
+provider will manage certain aspects of your application, leaving you with the remaining
+responsibility. Depending on the model your services use, you will have different levels and types
+of responsibility.
+
+![Table showing shared responsibility model for Cloud](./images/cloud-responsibility-model.png)
+
+In this model Microsoft Azure take a large part of the responsibility for reliability for PaaS,
+but not all. Customers also have responsibilities in this model, which we will discuss as we go.
+
 ## Elasticity
 
 There are a number of workload patterns that make the best use of the economics and scale of the
@@ -283,6 +295,7 @@ customers while having low-volume customers share the same set of compute resour
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
+[shared responsibility]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/2-pillars#shared-responsibility
 [Static Content Hosting pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting
 [Async Request-Reply pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply
 [Publisher-Subscriber pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber

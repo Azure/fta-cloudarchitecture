@@ -14,11 +14,7 @@ The Reliability pillar contains a huge amount of valuable information for cloud 
 
 ## Shared responsibility
 
-Moving to the cloud introduces a model of [shared responsibility]. In this model, your cloud provider will manage certain aspects of your application, leaving you with the remaining responsibility.
-
-![Table showing shared responsibility model for Cloud](./images/cloud-responsibility-model.png)
-
-In this model Microsoft Azure take a large part of the responsibility for reliability for PaaS, but not all. Customers also have responsibilities in this model. To help meet these responsibilities architects should:
+When considering the shared responsibility principle, you need to ensure you meet your responsibilities:
 
 * Become familiar with Azure SLAs and the _failure modes_ of each service that is deployed
 * Review [Azure subscription and service limits, quotas, and constraints]
