@@ -72,7 +72,7 @@ selection of technologies to suit the cloud pricing models.
 > 
 > 📖 Read the full [Static Content Hosting pattern].
 
-### Cloud models
+## Cloud models
 
 Consider different cloud hosting models. Managed services (also called Platform as a Service/PaaS,
 serverless, or Software as a Service) usually have much less ongoing maintenance and operation 
