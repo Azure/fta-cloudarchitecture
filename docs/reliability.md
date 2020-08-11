@@ -124,6 +124,22 @@ Most availability requirements can be met in a single Azure region with Availabi
 
 Employ [resiliency patterns] at the application layer. [Cloud design patterns] like _retry_, _circuit breaker_, _failover_ and _queue based load leveling_ can have a significant positive impact on reliability.
 
+> ### 🧩 Design pattern: Retry
+> 
+> Have applications transparently retry failed operations. Cloud environments are subject to a number
+> of sources of transient failures, and simply retrying operations will frequently allow the operation
+> to succeed.
+> 
+> 📖 Read the full [Retry pattern].
+
+> ### 🧩 Design pattern: Circuit Breaker
+> 
+> Implement a component that detects failures in downstream services and encapsulates the logic
+> required to detect them being online again, as well as notifying consumers of the service's current
+> state.
+> 
+> 📖 Read the full [Circuit Breaker pattern].
+
 > **[prev]** | **[home]**  | **[next]**
 
 [prev]:./cloud-fundamentals.md
