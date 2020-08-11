@@ -233,6 +233,14 @@ performance.
 > 
 > 📖 Read the full [Choreography pattern].
 
+> ### 🧩 Design pattern: Compensating Transactions
+> 
+> Eventually consistent systems can make it difficult or impossible to roll back failed transactions.
+> Instead, implement a transaction that undoes the effect of the failed transaction while taking
+> account of any subsequent actions that may have taken place.
+> 
+> 📖 Read the full [Compensating Transactions pattern].
+
 ## Partitioning
 
 A further key principle of designing solutions for the cloud is partitioning. Each partition
@@ -302,5 +310,6 @@ customers while having low-volume customers share the same set of compute resour
 [Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
 [Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
 [Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
+[Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
 [Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
 [Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp

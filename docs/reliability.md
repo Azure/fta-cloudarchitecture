@@ -142,6 +142,8 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 [Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/
 [Availability patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/availability
 [Resiliency patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/resiliency
+[Retry pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/retry
+[Circuit Breaker pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
 [cloud design patterns]:./cloud-design-patterns.md
 [Azure Architecture Center]:https://docs.microsoft.com/en-us/azure/architecture/
 [guided learning path for reliability]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-reliability/
