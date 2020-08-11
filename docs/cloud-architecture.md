@@ -10,7 +10,7 @@ A Solution Architect is someone who assists teams to design solutions that are f
 
 ## Do we need Architects in Agile?
 
-While some teams have decided that having a dedicated Architect role is unnecessary, the need for good _architecture_ does not go away; in fact it is crucial for Agile teams that want to move fast, but still meet important business requirements around reliability, performance, operational excellence, cost and security. One approach for Agile teams is for all engineers to share the role of architect, putting on their "architect hat" from time to time. Another approach is to have an Architect available to the team as an _advisor_. FastTrack for Azure engineers are often used in this capacity.
+While some teams have decided that having a dedicated Architect role is unnecessary, the need for good _architecture_ remains; in fact it is crucial for Agile teams that want to move fast, but still meet important business requirements around reliability, performance, operational excellence, cost and security. One approach for Agile teams is for all engineers to share the role of architect, putting on their "architect hat" from time to time. Another approach is to have an Architect available to the team as an _advisor_. Microsoft FastTrack for Azure engineers are often used in this capacity.
 
 ## Relative cost to fix and shift left
 
@@ -34,7 +34,7 @@ The Azure Well-Architected Framework consists of five pillars:
 
 ## Architecture design
 
-Good practices in the design phase help to reduce issues in later phases of a system's life. While it is important to think about requirements in the early stage we should be careful not to fall into the trap of [Big Design Up Front] (BDUF); our design should evolve and continue to be refined until the end of the system's life. In the next section we will learn why business requirements are so critical to good design, and can greatly simplify the design process. This will be a recurring theme throughout this 1:many session.
+Good practices in the design phase help to reduce issues in later phases of a system's life. While it is important to think about requirements in the early stage we should be careful not to fall into the trap of [Big Design Up Front] (BDUF); our design should evolve and continue to be refined until the end of the system's life. In the [reliability] section we will learn why business requirements are critical to good design, and can simplify the design process. This will be a recurring theme throughout this 1:many session.
 
 An _architecture design session_ is a good way to kick-off a project. A small team of architects, engineers and product owners would meet to whiteboard a design, or to review a _candidate architecture_ that has already been researched and designed by a Solution architect. When critiquing a design the _vision_, _strategy_ and _business requirements_ should be kept firmly in mind. A _reference architecture_ may be used as a starting point.  
 
@@ -49,10 +49,15 @@ Once a candidate architecture has been formed it should be documented in a diagr
 
 ## Architecture review
 
-Once a good candidate architecture has been formed and the team are getting close to starting Dev/Test then we highly recommend requesting an Architecture Review from the FastTrack for Azure team. In
-a 90 minute review session we will review your design to validate that it meets your business requirements and offer advice (including a list of recommendations and risks) where we see room for improvements. The goal of a FastTrack for Azure Architecture review is to help you be successful in your deployment to Azure and also to have a great experience once your are operating your system in production.
+Once a candidate architecture has been formed and the team are getting close to starting Dev/Test, we recommend requesting an Architecture Review from the FastTrack for Azure team. In a 90 minute review session we will review your design to validate that it meets your business requirements and offer advice (including a list of recommendations and risks) where we see room for improvements. The goal of a FastTrack for Azure Architecture review is to help you be successful in your deployment to Azure and also to have a great experience once your are operating your system in production.
 
 > 📖 [FastTrack for Azure Architectural / Solution Review and Guidance Framework]
+
+## Roadmap
+
+Migration and modernization projects are common in cloud. Rarely do systems go from current state to future state in one big bang. What is more common is a series of steps and milestones ([improvement kata]) on a roadmap towards deploying the future state architecture. We recommend breaking your project down into a series of milestones, each one delivering value to the business.
+
+
 
 ## Note on existing systems
 Often when moving an existing system from on-premises to the cloud (often refered to as application modernisation) There will be several constraints placed on the architecture because of the existing architecture. When this occurs you may not be able to follow all of the guidance discussed.
