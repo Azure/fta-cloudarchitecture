@@ -227,7 +227,7 @@ A further key principle of designing solutions for the cloud is partitioning. Ea
 represents a distinct set of data or compute resources that can be managed and accessed separately.
 Partitioning is frequently used for high-volume solutions to allow different sets of physical
 infrastructure to independently manage subsets of the total data set, and to perform querying and
-compute operations on that data.
+compute operations on that data independently of other partitions.
 
 > ### 🧩 Sharding pattern
 > 

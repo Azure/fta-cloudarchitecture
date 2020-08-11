@@ -12,6 +12,13 @@ The [Azure Architecture Center] is a rich resource for cloud architects and engi
 
 ### Azure samples
 
+## Design patterns
+
+The Azure Architecture Center contains a [Cloud Design Patterns] section that explain how common
+problems can be solved with cloud architecture. There are a large number of patterns that span
+several types of considerations including reliability, performance, and managing complex
+deployments.
+
 ## Well-Architected Framework
 
 👷🏻‍♀️🚧👷🏻‍♂️ (link and sentence on what is contains and when architects should use it)
@@ -26,3 +33,4 @@ The [Azure Architecture Center] is a rich resource for cloud architects and engi
 [home]:/README.md
 [next]:./cloud-fundamentals.md
 [Azure Architecture Center]:https://docs.microsoft.com/azure/architecture/
+[Cloud Design Patterns]:https://docs.microsoft.com/azure/architecture/patterns/
