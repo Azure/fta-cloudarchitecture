@@ -61,7 +61,7 @@ selection of technologies to suit the cloud pricing models.
 
 > 📖 Read more in [Azure Well-Architected Framework - Maximize efficiency of cloud spend].
 
-> ### 🧩 Static Content Hosting pattern
+> ### 🧩 Design pattern: Static Content Hosting
 > 
 > The relative cost of storage is much lower than that of compute resources. One way to exploit this
 > is to move static content into a storage system, or to use caching (e.g. Azure CDN) to store and
@@ -129,7 +129,7 @@ strategic points within any architecture.
 > 📖 Read more about queuing in 
 > [Azure Well-Architected Framework - App design for performance efficiency].
 
-> ### 🧩 Async Request-Reply pattern
+> ### 🧩 Design pattern: Async Request-Reply
 > 
 > Avoid having frontend hosts performing long-running tasks. Instead, have the frontend host
 > initiate a background processor to complete the task, and allow the client to obtain the status of
@@ -137,14 +137,14 @@ strategic points within any architecture.
 > 
 > 📖 Read the full [Async Request-Reply pattern].
 
-> ### 🧩 Publisher-Subscriber pattern
+> ### 🧩 Design pattern: Publisher-Subscriber
 > 
 > Have application components publish messages into a message broker (often a queue, but not
 > necessarily). Consumers then subscribe to that broker and receive messages as they are available.
 > 
 > 📖 Read the full [Publisher-Subscriber pattern].
 
-> ### 🧩 Queue-based Load Leveling pattern
+> ### 🧩 Design pattern: Queue-based Load Leveling
 > 
 > Once a queue is employed (e.g. as per the [Publisher-Subscriber pattern]), the system processing
 > messages from the queue can process at a consistent rate. This supports elastic scaling since new
@@ -152,7 +152,7 @@ strategic points within any architecture.
 > 
 > 📖 Read the full [Queue-based Load Leveling pattern].
 
-> ### 🧩 Competing Consumers pattern
+> ### 🧩 Design pattern: Competing Consumers
 > 
 > Multiple workers can subscribe to a single queue. They 'compete' for messages, letting the queue
 > deliver messages to each one, and can obtain further messages as they complete the processing of
@@ -212,7 +212,7 @@ performance.
 > 📖 Read more about data store selection for microservices architectures in the
 > [Azure Architecture Center - Data considerations for microservices].
 
-> ### 🧩 Choreography pattern
+> ### 🧩 Design pattern: Choreography
 > 
 > Have multiple systems independently perform operations based on messages or events. Instead of
 > having a single controller orchestrating everything, have each sub-component or microservice make
@@ -229,7 +229,7 @@ Partitioning is frequently used for high-volume solutions to allow different set
 infrastructure to independently manage subsets of the total data set, and to perform querying and
 compute operations on that data independently of other partitions.
 
-> ### 🧩 Sharding pattern
+> ### 🧩 Design pattern: Sharding
 > 
 > Divide data sources into horizontal partitions (shards) and store them in distinct databases or
 > stores. This enables high levels of scale-out across independent sets of compute and storage
@@ -251,7 +251,7 @@ for other components too. For example, you might horizontally scale your entire 
 deploying a second instance, or you might deploy dedicated compute resources for high-volume
 customers while having low-volume customers share the same set of compute resources.
 
-> ### 🧩 Deployment Stamps pattern
+> ### 🧩 Design pattern: Deployment Stamps
 > 
 > Deploy multiple instances of your solution, including compute resources and dedicated data stores.
 > Direct specific customers (tenants) to specific stamps. This allows for running independent copies
