@@ -40,9 +40,9 @@ resources used in many cloud-hosted applications:
 * **Network traffic.** Azure typically does not charge for traffic entering our regions (_ingress_)
   but does charge for traffic as it leaves (_egresses_) our regions.
 * **Storage.** There are a number of different storage options for different storage profiles.
+* **Memory.** We need to maintain some data in memory (RAM) for fast access.
 * **Compute.** There are a large number of options for types of VMs available depending on the
   feature set and resource profile required.
-* **Databases.** These include storage, compute, and networking as part of their implementation.
 
 We can compare the relative costs of some entry-level resource profiles for each of these resource
 types:
@@ -60,6 +60,17 @@ resources while still achieving massive scale. We can use similar practices to o
 selection of technologies to suit the cloud pricing models.
 
 > 📖 Read more in [Azure Well-Architected Framework - Maximize efficiency of cloud spend].
+
+> ### 🧩 Design pattern: Static Content Hosting
+> 
+> The relative cost of storage is much lower than that of compute resources. One way to exploit this
+> is to move static content into a storage system, or to use caching (e.g. Azure CDN) to store and
+> re-serve data that does not change frequently. This is also a great way to increase the
+> performance of an application by serving it from resources that are geographically closer to
+> users, and by offloading the processing of these requests to dedicated services that are optimised
+> for this task.
+> 
+> 📖 Read the full [Static Content Hosting pattern].
 
 ### Cloud models
 
@@ -118,6 +129,37 @@ strategic points within any architecture.
 > 📖 Read more about queuing in 
 > [Azure Well-Architected Framework - App design for performance efficiency].
 
+> ### 🧩 Design pattern: Async Request-Reply
+> 
+> Avoid having frontend hosts performing long-running tasks. Instead, have the frontend host
+> initiate a background processor to complete the task, and allow the client to obtain the status of
+> the task.
+> 
+> 📖 Read the full [Async Request-Reply pattern].
+
+> ### 🧩 Design pattern: Publisher-Subscriber
+> 
+> Have application components publish messages into a message broker (often a queue, but not
+> necessarily). Consumers then subscribe to that broker and receive messages as they are available.
+> 
+> 📖 Read the full [Publisher-Subscriber pattern].
+
+> ### 🧩 Design pattern: Queue-based Load Leveling
+> 
+> Once a queue is employed (e.g. as per the [Publisher-Subscriber pattern]), the system processing
+> messages from the queue can process at a consistent rate. This supports elastic scaling since new
+> workers can be provisioned and deprovisioned based on queue length.
+> 
+> 📖 Read the full [Queue-based Load Leveling pattern].
+
+> ### 🧩 Design pattern: Competing Consumers
+> 
+> Multiple workers can subscribe to a single queue. They 'compete' for messages, letting the queue
+> deliver messages to each one, and can obtain further messages as they complete the processing of
+> each message. This helps to balance the workload between workers.
+> 
+> 📖 Read the full [Competing Consumers pattern].
+
 Another approach for a loosely coupled solution architecture is the
 [Event-driven architecture style]. In these architectures, subcomponents or microservices publish
 events, and other parts of the system listen to those events and perform their own actions
@@ -170,13 +212,30 @@ performance.
 > 📖 Read more about data store selection for microservices architectures in the
 > [Azure Architecture Center - Data considerations for microservices].
 
+> ### 🧩 Design pattern: Choreography
+> 
+> Have multiple systems independently perform operations based on messages or events. Instead of
+> having a single controller orchestrating everything, have each sub-component or microservice make
+> its own decisions and perform its own operations. Each independent system may be processing data at
+> different rates, and therefore may not have strong consistency with one another.
+> 
+> 📖 Read the full [Choreography pattern].
+
 ## Partitioning
 
 A further key principle of designing solutions for the cloud is partitioning. Each partition
 represents a distinct set of data or compute resources that can be managed and accessed separately.
 Partitioning is frequently used for high-volume solutions to allow different sets of physical
 infrastructure to independently manage subsets of the total data set, and to perform querying and
-compute operations on that data.
+compute operations on that data independently of other partitions.
+
+> ### 🧩 Design pattern: Sharding
+> 
+> Divide data sources into horizontal partitions (shards) and store them in distinct databases or
+> stores. This enables high levels of scale-out across independent sets of compute and storage
+> resources.
+> 
+> 📖 Read the full [Sharding pattern].
 
 Partitioning is an example of horizontal scaling. In general, horizontal scaling (scaling _out_) is
 cheaper and more efficient than vertical scaling (scaling _up_). Partitions allow us to achieve
@@ -192,11 +251,20 @@ for other components too. For example, you might horizontally scale your entire 
 deploying a second instance, or you might deploy dedicated compute resources for high-volume
 customers while having low-volume customers share the same set of compute resources.
 
+> ### 🧩 Design pattern: Deployment Stamps
+> 
+> Deploy multiple instances of your solution, including compute resources and dedicated data stores.
+> Direct specific customers (tenants) to specific stamps. This allows for running independent copies
+> of your solution in different geographical regions, as well as running single- and multi-tenant
+> instances.
+> 
+> 📖 Read the full [Deployment Stamps pattern].
+
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:./requirements.md
+[prev]:./azure-architecture-center.md.md
 [home]:/README.md
-[next]:./cloud-design-patterns.md
+[next]:./reliability.md
 [Application Architecture Guide - Autoscaling]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
 [Application Architecture Guide - Data partitioning strategies]:https://docs.microsoft.com/en-us/azure/architecture/best-practices/data-partitioning-strategies
 [Application Architecture Guide - Design to scale out]:https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/scale-out
@@ -215,3 +283,11 @@ customers while having low-volume customers share the same set of compute resour
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
+[Static Content Hosting pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting
+[Async Request-Reply pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply
+[Publisher-Subscriber pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber
+[Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
+[Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
+[Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
+[Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
+[Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp

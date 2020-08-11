@@ -46,6 +46,7 @@ Once a candidate architecture has been formed it should be documented in a diagr
 
 > 📖 [Azure subscription and service limits, quotas, and constraints]
 
+
 ## Architecture review
 
 Once a candidate architecture has been formed and the team are getting close to starting Dev/Test, we recommend requesting an Architecture Review from the FastTrack for Azure team. In a 90 minute review session we will review your design to validate that it meets your business requirements and offer advice (including a list of recommendations and risks) where we see room for improvements. The goal of a FastTrack for Azure Architecture review is to help you be successful in your deployment to Azure and also to have a great experience once your are operating your system in production.
@@ -58,6 +59,14 @@ Migration and modernization projects are common in cloud. Rarely do systems go f
 
 
 
+## Note on existing systems
+Often when moving an existing system from on-premises to the cloud (often refered to as application modernisation) There will be several constraints placed on the architecture because of the existing architecture. When this occurs you may not be able to follow all of the guidance discussed.
+
+* often requirements are no longer known
+* old protocols and architecture inflexible
+* complex systems take time to change and will need a phased approach
+* Phase 1 may simply involve substituting out components for similar PaaS services
+* Investing in building api facades for legacy components to facilitate integration
 
 ## Links and references
 
@@ -65,9 +74,9 @@ Migration and modernization projects are common in cloud. Rarely do systems go f
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:/README.md
+[prev]:/azure-architecture-center.md
 [home]:/README.md
-[next]:./well-architected.md
+[next]:./cloud-fundamentals.md
 [Big Design Up Front]:https://en.wikipedia.org/wiki/Big_Design_Up_Front
 [Azure Well-Architected Framework pillars]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/2-pillars
 [Azure subscription and service limits, quotas, and constraints]:https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
