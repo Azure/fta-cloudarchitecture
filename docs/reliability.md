@@ -10,7 +10,7 @@ Building a reliable application in the cloud is different from traditional appli
 
 > 📖 Complete the [guided learning path for reliability] on [Microsoft Learn]
 
-The Reliability pillar contains a huge amount of valuable information for cloud architects and engineers. We have chosen a few themes that we think are especially useful to understand.
+The Reliability pillar contains a huge amount of valuable information for cloud architects and engineers. We have chosen a few themes from the pillar that we think are especially important.
 
 ## Shared responsibility
 
@@ -18,18 +18,16 @@ Moving to the cloud introduces a model of [shared responsibility]. In this model
 
 ![Table showing shared responsibility model for Cloud](./images/cloud-responsibility-model.png)
 
-In this model Microsoft Azure take a large part of the responsibility for reliability for PaaS, but not all. Architects need to clearly understand what the customer's responsibilities are in this model. For example:
+In this model Microsoft Azure take a large part of the responsibility for reliability for PaaS, but not all. Customers also have responsibilities in this model. To help meet these responsibilities architects should:
 
-#### Customers' responsibilities include:
-
-* Understanding service level agreements (SLAs) and _failure modes_
-* Understanding [Azure subscription and service limits, quotas, and constraints]
-* Enabling appropriate availability and recovery features
-* Avoiding single points of failure
-* Understanding _composite uptime_
-* Following best practices for each service 
-* Employing [cloud design patterns] for resilience and availability
-* Keeping Azure software libraries up to date, including frameworks and client SDKs
+* Become familiar with Azure SLAs and the _failure modes_ of each service that is deployed
+* Review [Azure subscription and service limits, quotas, and constraints]
+* Enable the availability and recovery features that are appropriate to business requirements
+* Avoid designing in single points of failure
+* Calculate the _composite uptime_ of the solution
+* Follow best practices for each Azure service 
+* Employ [cloud design patterns] for resilience and availability
+* Keep Azure software libraries up to date, including frameworks and client SDKs
 
 ## High availability, business continuity & disaster recovery
 
@@ -101,7 +99,7 @@ How could the uptime be improved?
 
 Azure PaaS services provide _features_ for availability and recovery. Some features are only available in certain SKUs or Tiers (e.g. Premium). Some features are provided by [Zonal or zone-redundant architecture] in Availability Zones (AZ's).
 
-Take time to review and understand the availability and recovery features of each service. Enable the features + configuration + SKU/tier combination that meets your requirement. For example:
+Take time to research the availability and recovery features of each service. Enable the features + configuration + SKU/tier combination that meets your requirement. For example:
 
 > ℹ This table is an example and not an exhaustive list of services and features
 
