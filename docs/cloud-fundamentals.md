@@ -40,9 +40,9 @@ resources used in many cloud-hosted applications:
 * **Network traffic.** Azure typically does not charge for traffic entering our regions (_ingress_)
   but does charge for traffic as it leaves (_egresses_) our regions.
 * **Storage.** There are a number of different storage options for different storage profiles.
+* **Memory.** We need to maintain some data in memory (RAM) for fast access.
 * **Compute.** There are a large number of options for types of VMs available depending on the
   feature set and resource profile required.
-* **Databases.** These include storage, compute, and networking as part of their implementation.
 
 We can compare the relative costs of some entry-level resource profiles for each of these resource
 types:
