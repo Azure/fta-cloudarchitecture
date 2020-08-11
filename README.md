@@ -44,8 +44,7 @@ This 90 minute 1:many session will run like this. Each top-level section will ru
 1. **Welcome, introductions**
    * About FastTrack for Azure
    * Other 1:many sessions
-   * Azure Architecture Center and the Well-Architected Framework
-1. **[Azure architecture center](./docs/azure-architecture-center.md)**
+1. **[Azure Architecture Center](./docs/azure-architecture-center.md)**
    * Application architecture guide
    * Well-architected framework
    * Cloud adoption framework
