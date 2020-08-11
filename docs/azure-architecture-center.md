@@ -32,8 +32,8 @@ The inspiration of this discussion. The Well architected framework lays out key 
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:./cloud-architecture.md
+[prev]:./README.md
 [home]:/README.md
-[next]:./cloud-fundamentals.md
+[next]:./cloud-architecture.md
 [Azure Architecture Center]:https://docs.microsoft.com/azure/architecture/
 [Cloud Design Patterns]:https://docs.microsoft.com/azure/architecture/patterns/

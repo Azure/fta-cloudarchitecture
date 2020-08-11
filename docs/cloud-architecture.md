@@ -69,9 +69,9 @@ Often when moving an existing system from on-premises to the cloud (often refere
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:/README.md
+[prev]:/azure-architecture-center.md
 [home]:/README.md
-[next]:./azure-architecture-center.md
+[next]:./cloud-fundamentals.md
 [Big Design Up Front]:https://en.wikipedia.org/wiki/Big_Design_Up_Front
 [Azure Well-Architected Framework pillars]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/2-pillars
 [Azure subscription and service limits, quotas, and constraints]:https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
