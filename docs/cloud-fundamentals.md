@@ -110,9 +110,9 @@ To make the most of the elasticity provided by the cloud there are a few things 
 * Prefer stateless applications wherever possible, so that you can rapidly shift your traffic
   around and don't have to pin specific requests to specific compute instances.
 * Avoid having bottlenecks that might inhibit your ability to scale out quickly.
-* Loosely couple your components so that you can scale each part of your solution independently.
 * Configure auto-scaling on your resources so that you can quickly scale even with unpredictable
   bursting.
+* Loosely couple your components so that you can scale each part of your solution independently.
 
 > 📖 Read more in [Azure Well-Architected Framework - Scaling up and scaling out],
 > [Application Architecture Guide - Design to scale out], and
