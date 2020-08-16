@@ -208,10 +208,8 @@ Many solutions need a mixture of consistency levels for different parts of their
 example, you might need strong consistency within a transactional system but eventual consistency
 for replicas across regions, or to synchronise data to an analytics system or third party. Having
 clear requirements from business stakeholders is critical to making an informed decision on
-consistency levels.
-
-Some data stores, like Cosmos DB, let you control the consistency level at the transaction level to
-meet your requirements.
+consistency levels. Some data stores, like Cosmos DB, even let you control the consistency level for
+individual transactions, which can help to meet more complex requirements.
 
 > 📖 Read more about data store and consistency level selection in
 > [Application Architecture Guide - Use the best data store for the job].
@@ -247,7 +245,9 @@ A further key principle of designing solutions for the cloud is partitioning. Ea
 represents a distinct set of data or compute resources that can be managed and accessed separately.
 Partitioning is frequently used for high-volume solutions to allow different sets of physical
 infrastructure to independently manage subsets of the total data set, and to perform querying and
-compute operations on that data independently of other partitions.
+compute operations on that data independently of other partitions. Some data stores (e.g. Cosmos DB)
+perform partitioning automatically, while others (e.g. SQL Server) need you to configure this
+explicitly.
 
 > ### 🧩 Design pattern: Sharding
 > 
@@ -279,6 +279,10 @@ customers while having low-volume customers share the same set of compute resour
 > instances.
 > 
 > 📖 Read the full [Deployment Stamps pattern].
+
+It's important to have clear requirements around your solution's scale and deployment models when
+designing a partitioning strategy. This will help to determine whether you should consider sharding
+individual data stores, or to deploy multiple stamps (instances) of your whole solution.
 
 > **[prev]** | **[home]**  | **[next]**
 
