@@ -44,10 +44,11 @@ This 90 minute 1:many session will run like this. Each top-level section will ru
 1. **Welcome, introductions**
    * About FastTrack for Azure
    * Other 1:many sessions
-1. **[Azure Architecture Center](./docs/azure-architecture-center.md)**
-   * Application architecture guide
-   * Well-architected framework
-   * Cloud adoption framework
+   * **[Azure Architecture Center](./docs/azure-architecture-center.md)**
+     * Application architecture guide
+     * Design patterns
+     * Well-Architected Framework
+     * Cloud Adoption Framework
 1. **[Architecture in the cloud](./docs/cloud-architecture.md)**
    * The role of the Architect
    * Architecture design session
@@ -55,13 +56,13 @@ This 90 minute 1:many session will run like this. Each top-level section will ru
    * Relative cost to fix
 1. **[Cloud fundamentals](./docs/cloud-fundamentals.md)**
     * Cloud economics
+    * Cloud models
     * Elasticity
     * Loose coupling
     * Eventual consistency
     * Partitioning
 1. **[Reliability](./docs/reliability.md)**
     * Well architected framework
-    * Shared responsibility
     * HA, BC/DR
     * Uptime, RTO, RPO
     * Azure SLAs

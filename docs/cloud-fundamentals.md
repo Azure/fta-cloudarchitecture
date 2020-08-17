@@ -72,7 +72,7 @@ selection of technologies to suit the cloud pricing models.
 > 
 > 📖 Read the full [Static Content Hosting pattern].
 
-### Cloud models
+## Cloud models
 
 Consider different cloud hosting models. Managed services (also called Platform as a Service/PaaS,
 serverless, or Software as a Service) usually have much less ongoing maintenance and operation 
@@ -110,9 +110,9 @@ To make the most of the elasticity provided by the cloud there are a few things 
 * Prefer stateless applications wherever possible, so that you can rapidly shift your traffic
   around and don't have to pin specific requests to specific compute instances.
 * Avoid having bottlenecks that might inhibit your ability to scale out quickly.
-* Loosely couple your components so that you can scale each part of your solution independently.
 * Configure auto-scaling on your resources so that you can quickly scale even with unpredictable
   bursting.
+* Loosely couple your components so that you can scale each part of your solution independently.
 
 > 📖 Read more in [Azure Well-Architected Framework - Scaling up and scaling out],
 > [Application Architecture Guide - Design to scale out], and
@@ -208,10 +208,8 @@ Many solutions need a mixture of consistency levels for different parts of their
 example, you might need strong consistency within a transactional system but eventual consistency
 for replicas across regions, or to synchronise data to an analytics system or third party. Having
 clear requirements from business stakeholders is critical to making an informed decision on
-consistency levels.
-
-Some data stores, like Cosmos DB, let you control the consistency level at the transaction level to
-meet your requirements.
+consistency levels. Some data stores, like Cosmos DB, even let you control the consistency level for
+individual transactions, which can help to meet more complex requirements.
 
 > 📖 Read more about data store and consistency level selection in
 > [Application Architecture Guide - Use the best data store for the job].
@@ -233,13 +231,23 @@ performance.
 > 
 > 📖 Read the full [Choreography pattern].
 
+> ### 🧩 Design pattern: Compensating Transactions
+> 
+> Eventually consistent systems can make it difficult or impossible to roll back failed transactions.
+> Instead, implement a transaction that undoes the effect of the failed transaction while taking
+> account of any subsequent actions that may have taken place.
+> 
+> 📖 Read the full [Compensating Transactions pattern].
+
 ## Partitioning
 
 A further key principle of designing solutions for the cloud is partitioning. Each partition
 represents a distinct set of data or compute resources that can be managed and accessed separately.
 Partitioning is frequently used for high-volume solutions to allow different sets of physical
 infrastructure to independently manage subsets of the total data set, and to perform querying and
-compute operations on that data independently of other partitions.
+compute operations on that data independently of other partitions. Some data stores (e.g. Cosmos DB)
+perform partitioning automatically, while others (e.g. SQL Server) need you to configure this
+explicitly.
 
 > ### 🧩 Design pattern: Sharding
 > 
@@ -272,6 +280,10 @@ customers while having low-volume customers share the same set of compute resour
 > 
 > 📖 Read the full [Deployment Stamps pattern].
 
+It's important to have clear requirements around your solution's scale and deployment models when
+designing a partitioning strategy. This will help to determine whether you should consider sharding
+individual data stores, or to deploy multiple stamps (instances) of your whole solution.
+
 > **[prev]** | **[home]**  | **[next]**
 
 [prev]:./azure-architecture-center.md.md
@@ -302,5 +314,6 @@ customers while having low-volume customers share the same set of compute resour
 [Queue-based Load Leveling pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling
 [Competing Consumers pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers
 [Choreography pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
+[Compensating Transactions pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction
 [Sharding pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/sharding
 [Deployment Stamps pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
