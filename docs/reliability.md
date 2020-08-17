@@ -47,22 +47,6 @@ Every application, service, platform and system has a stated or implied RTO, RPO
 * The business should be consulted when determining these requirements 
 * There is a strong relationship between uptime, complexity and cost
 
-## Azure SLAs
-
-> 📖 Familiarize yourself with [Azure service-level agreements].
-
-> 📺 Watch [SLIs, SLOs, SLAs, oh my!] for a definition of these terms and an explanation of the differences.
-
-* An Azure Service-level Agreement (SLA) can also be read as a minimum service-level objective (SLO).
-* An SLA is a financial guarantee, not an absolute guarantee
-* Read the SLA details carefully, particularly the definition of "downtime" for each service, which give important hints about _failure modes_
-
-For example, in the [SLA for Azure SQL Database], "downtime" is defined as:
-
-_"The total accumulated Deployment Minutes across all Databases in a given Microsoft Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if **all continuous attempts by Customer to establish a connection to the Database** within the minute fail."_
-
-The Azure SQL Database team expect almost all outages to be transient (brief and non-recurring). Therefore the _retry_ pattern should be used to continuously retry for up to a minute. This is typical in cloud services; retry has been the default behaviour in ADO.NET since .NET Framework 4.6.1.
-
 ## Architecture review
 
 Once the target SLA requirements have been determined, an _Architecture review_ should be performed to ensure that these requirements are met. 

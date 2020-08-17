@@ -57,7 +57,9 @@ Once a candidate architecture has been formed and the team are getting close to 
 
 Migration and modernization projects are common in cloud. Rarely do systems go from current state to future state in one big bang. What is more common is a series of steps and milestones ([improvement kata]) on a roadmap towards deploying the future state architecture. We recommend breaking your project down into a series of milestones, each one delivering value to the business.
 
+👷🏻‍♀️🚧👷🏻‍♂️ (WIP)
 
+Combine with 👇🏻
 
 ## Note on existing systems
 Often when moving an existing system from on-premises to the cloud (often refered to as application modernisation) There will be several constraints placed on the architecture because of the existing architecture. When this occurs you may not be able to follow all of the guidance discussed.
@@ -67,6 +69,22 @@ Often when moving an existing system from on-premises to the cloud (often refere
 * complex systems take time to change and will need a phased approach
 * Phase 1 may simply involve substituting out components for similar PaaS services
 * Investing in building api facades for legacy components to facilitate integration
+
+## Azure SLAs
+
+> 📖 Familiarize yourself with [Azure service-level agreements].
+
+> 📺 Watch [SLIs, SLOs, SLAs, oh my!] for a definition of these terms and an explanation of the differences.
+
+* An Azure Service-level Agreement (SLA) can also be read as a minimum service-level objective (SLO).
+* An SLA is a financial guarantee, not an absolute guarantee
+* Read the SLA details carefully, particularly the definition of "downtime" for each service, which give important hints about _failure modes_
+
+For example, in the [SLA for Azure SQL Database], "downtime" is defined as:
+
+_"The total accumulated Deployment Minutes across all Databases in a given Microsoft Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if **all continuous attempts by Customer to establish a connection to the Database** within the minute fail."_
+
+The Azure SQL Database team expect almost all outages to be transient (brief and non-recurring). Therefore the _retry_ pattern should be used to continuously retry for up to a minute. This is typical in cloud services; retry has been the default behaviour in ADO.NET since .NET Framework 4.6.1.
 
 ## Links and references
 
