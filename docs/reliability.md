@@ -14,12 +14,12 @@ The Reliability pillar contains a huge amount of valuable information for cloud 
 
 ## Shared responsibility
 
-When considering the shared responsibility principle, you need to ensure you meet your responsibilities:
+Under the _shared responsibility principle_, it is important to understand the responsibilities for reliability:
 
-* Become familiar with Azure SLAs and the _failure modes_ of each service that is deployed
+* Become familiar with [Azure Service-level Agreements] and the _failure modes_ of each service that is deployed
 * Review [Azure subscription and service limits, quotas, and constraints]
 * Enable the availability and recovery features that are appropriate to business requirements
-* Avoid designing in single points of failure
+* Avoid _single points of failure_
 * Calculate the _composite uptime_ of the solution
 * Follow best practices for each Azure service 
 * Employ [cloud design patterns] for resilience and availability
@@ -143,3 +143,4 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 [shared responsibility]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/2-pillars#shared-responsibility
 [Well-architected framework]:https://docs.microsoft.com/en-us/azure/architecture/framework
 [Azure subscription and service limits, quotas, and constraints]:https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
+[Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/
