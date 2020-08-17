@@ -10,15 +10,14 @@ A Solution Architect is someone who assists teams to design solutions that are f
 
 ## Do we need Architects in Agile?
 
-While some teams have decided that having a dedicated Architect role is unnecessary, the need for good _architecture_ remains; in fact it is crucial for Agile teams that want to move fast, but still meet important business requirements around reliability, performance, operational excellence, cost and security. One approach for Agile teams is for all engineers to share the role of architect, putting on their "architect hat" from time to time. Another approach is to have an Architect available to the team as an _advisor_. Microsoft FastTrack for Azure engineers are often used in this capacity.
+While some teams have decided that having a dedicated Architect role is unnecessary, the need for good _architecture_ remains; in fact it is crucial for Agile teams that want to move fast, but still meet important business requirements around reliability, performance, operational excellence, cost and security. One approach for Agile teams is for all engineers to share the role of architect, putting on their "architect hat" from time to time. Another approach is to have an Architect available to the team as an _advisor_. **Microsoft FastTrack for Azure** engineers are often used in this capacity.
 
 ## Relative cost to fix and shift left
 
-NIST conducted a study in 2002<sup>1</sup> observing that the relative cost to fix software defects increased exponentially the later they were discovered in the development process.
+NIST conducted a study in 2002<sup>1</sup> concluding that the relative cost to fix of software defects increased exponentially the later they were discovered in the development process. The impact of _"shifting left"_ the discovery of defects to the **Requirements / Architecture** phase can be great, with this example showing a 30X saving in cost-to-fix compared to detecting the same defect in Production / Post-Release.
 
-![Chart showing the relative cost to fix, based on time of detection](./images/relative-cost-to-fix.png) <br/>_Figure: Example of relative cost to fix, based on time of detection._
+![Chart showing the relative cost to fix, based on time of detection annotated with shift-left](./images/relative-cost-to-fix.png) <br/>_Figure: Example of relative cost to fix, based on time of detection, with effect of "shift left" highlighted._
 
-This research has been widely cited to _shift left_ testing processes from System / Acceptance Testing phase into Coding phase. However the impact from detecting defects in **Requirements / Architecture** phase are even more pronounced, with this example showing 30X saving in cost compared to detecting the same defect in Production / Post-Release.
 
 ## Azure Well-Architected Framework pillars
 
@@ -53,20 +52,39 @@ Once a candidate architecture has been formed and the team are getting close to 
 
 > 📖 [FastTrack for Azure Architectural / Solution Review and Guidance Framework]
 
-## Roadmap
+## Note on existing systems
+
+Often when moving an existing system from on-premises to the cloud (often refered to as application modernisation) there will be several constraints placed on the future state architecture because of the current state architecture. When this occurs you may not be able to follow all of the guidance discussed.
+
+* Often requirements are no longer known
+* Old protocols and architecture inflexible
+* Complex systems take time to change and will need a phased approach
+* "Phase 1" may simply involve substituting out components for similar PaaS services
+* Investing in building API facades for legacy components to facilitate integration (_[anti-corruption layer]_)
+
+### Draw a Roadmap
 
 Migration and modernization projects are common in cloud. Rarely do systems go from current state to future state in one big bang. What is more common is a series of steps and milestones ([improvement kata]) on a roadmap towards deploying the future state architecture. We recommend breaking your project down into a series of milestones, each one delivering value to the business.
 
+## Requirements, requirements, requirements
 
+Running a solution in the cloud doesn't reduce the need for requirements to be clear. In fact, the flexibility and power provided by the cloud means that it's even more important to have clear requirements from business stakeholders; otherwise, you could end up solving for problems that don't exist, missing an important design decision, or going beyond the available budget by adding unnecessary resiliency.
 
-## Note on existing systems
-Often when moving an existing system from on-premises to the cloud (often refered to as application modernisation) There will be several constraints placed on the architecture because of the existing architecture. When this occurs you may not be able to follow all of the guidance discussed.
+## Azure SLAs
 
-* often requirements are no longer known
-* old protocols and architecture inflexible
-* complex systems take time to change and will need a phased approach
-* Phase 1 may simply involve substituting out components for similar PaaS services
-* Investing in building api facades for legacy components to facilitate integration
+> 📖 Familiarize yourself with [Azure service-level agreements].
+
+> 📺 Watch [SLIs, SLOs, SLAs, oh my!] for a definition of these terms and an explanation of the differences.
+
+* An Azure Service-level Agreement (SLA) can also be read as a minimum service-level objective (SLO).
+* An SLA is a financial guarantee, not an absolute guarantee
+* Read the SLA details carefully, particularly the definition of "downtime" for each service, which give important hints about _failure modes_
+
+For example, in the [SLA for Azure SQL Database], "downtime" is defined as:
+
+_"The total accumulated Deployment Minutes across all Databases in a given Microsoft Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if **all continuous attempts by Customer to establish a connection to the Database** within the minute fail."_
+
+The Azure SQL Database team expect almost all outages to be transient (brief and non-recurring). Therefore the _retry_ pattern should be used to continuously retry for up to a minute. This is typical in cloud services; retry has been the default behaviour in ADO.NET since .NET Framework 4.6.1.
 
 ## Links and references
 
@@ -82,3 +100,8 @@ Often when moving an existing system from on-premises to the cloud (often refere
 [Azure subscription and service limits, quotas, and constraints]:https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
 [FastTrack for Azure Architectural / Solution Review and Guidance Framework]:https://github.com/Azure/fta-architecturalreview/blob/master/articles/introduction.md
 [The Economic Impacts of Inadequate Infrastructure for Software]:https://www.nist.gov/system/files/documents/director/planning/report02-3.pdf
+[anti-corruption layer]:https://docs.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer
+[improvement kata]:https://en.wikipedia.org/wiki/Toyota_Kata#The_Improvement_Kata
+[SLIs, SLOs, SLAs, oh my!]:https://www.youtube.com/watch?v=tEylFyxbDLE
+[SLA for Azure SQL Database]:https://azure.microsoft.com/en-au/support/legal/sla/sql-database/v1_4/
+[Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/

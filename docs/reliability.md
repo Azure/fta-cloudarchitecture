@@ -14,12 +14,12 @@ The Reliability pillar contains a huge amount of valuable information for cloud 
 
 ## Shared responsibility
 
-When considering the shared responsibility principle, you need to ensure you meet your responsibilities:
+Under the _shared responsibility principle_, it is important to understand the responsibilities for reliability:
 
-* Become familiar with Azure SLAs and the _failure modes_ of each service that is deployed
+* Become familiar with [Azure Service-level Agreements] and the _failure modes_ of each service that is deployed
 * Review [Azure subscription and service limits, quotas, and constraints]
 * Enable the availability and recovery features that are appropriate to business requirements
-* Avoid designing in single points of failure
+* Avoid _single points of failure_
 * Calculate the _composite uptime_ of the solution
 * Follow best practices for each Azure service 
 * Employ [cloud design patterns] for resilience and availability
@@ -46,22 +46,6 @@ Every application, service, platform and system has a stated or implied RTO, RPO
 * Uptime, RTO and RPO are important business (non-functional) requirements 
 * The business should be consulted when determining these requirements 
 * There is a strong relationship between uptime, complexity and cost
-
-## Azure SLAs
-
-> 📖 Familiarize yourself with [Azure service-level agreements].
-
-> 📺 Watch [SLIs, SLOs, SLAs, oh my!] for a definition of these terms and an explanation of the differences.
-
-* An Azure Service-level Agreement (SLA) can also be read as a minimum service-level objective (SLO).
-* An SLA is a financial guarantee, not an absolute guarantee
-* Read the SLA details carefully, particularly the definition of "downtime" for each service, which give important hints about _failure modes_
-
-For example, in the [SLA for Azure SQL Database], "downtime" is defined as:
-
-_"The total accumulated Deployment Minutes across all Databases in a given Microsoft Azure subscription during which the Database is unavailable. A minute is considered unavailable for a given Database if **all continuous attempts by Customer to establish a connection to the Database** within the minute fail."_
-
-The Azure SQL Database team expect almost all outages to be transient (brief and non-recurring). Therefore the _retry_ pattern should be used to continuously retry for up to a minute. This is typical in cloud services; retry has been the default behaviour in ADO.NET since .NET Framework 4.6.1.
 
 ## Architecture review
 
@@ -139,7 +123,6 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 [prev]:./cloud-fundamentals.md
 [home]:/README.md
 [next]:/README.md
-[Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/
 [Availability patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/availability
 [Resiliency patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/resiliency
 [Retry pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/retry
@@ -150,8 +133,6 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 [Microsoft Learn]:https://docs.microsoft.com/en-us/learn/
 [99.9% uptime]:https://uptime.is/99.9
 [Determine the service-level agreement of your application]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-reliability/2-high-availability#determine-the-service-level-agreement-of-your-application
-[SLIs, SLOs, SLAs, oh my!]:https://www.youtube.com/watch?v=tEylFyxbDLE
-[SLA for Azure SQL Database]:https://azure.microsoft.com/en-au/support/legal/sla/sql-database/v1_4/
 [Solution Review and Guidance Framework]:https://github.com/Azure/fta-architecturalreview/blob/master/articles/introduction.md
 [Microsoft FastTrack for Azure]:https://azure.microsoft.com/en-us/programs/azure-fasttrack/
 [Composite SLO Estimation spreadsheet]:/tools/Composite_SLO_Estimation_Tool.xlsx
@@ -162,3 +143,4 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 [shared responsibility]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-introduction/2-pillars#shared-responsibility
 [Well-architected framework]:https://docs.microsoft.com/en-us/azure/architecture/framework
 [Azure subscription and service limits, quotas, and constraints]:https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
+[Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/
