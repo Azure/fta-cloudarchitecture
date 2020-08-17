@@ -123,7 +123,6 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 [prev]:./cloud-fundamentals.md
 [home]:/README.md
 [next]:/README.md
-[Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/
 [Availability patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/availability
 [Resiliency patterns]:https://docs.microsoft.com/en-us/azure/architecture/patterns/category/resiliency
 [Retry pattern]:https://docs.microsoft.com/en-us/azure/architecture/patterns/retry
@@ -134,8 +133,6 @@ Employ [resiliency patterns] at the application layer. [Cloud design patterns] l
 [Microsoft Learn]:https://docs.microsoft.com/en-us/learn/
 [99.9% uptime]:https://uptime.is/99.9
 [Determine the service-level agreement of your application]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-reliability/2-high-availability#determine-the-service-level-agreement-of-your-application
-[SLIs, SLOs, SLAs, oh my!]:https://www.youtube.com/watch?v=tEylFyxbDLE
-[SLA for Azure SQL Database]:https://azure.microsoft.com/en-au/support/legal/sla/sql-database/v1_4/
 [Solution Review and Guidance Framework]:https://github.com/Azure/fta-architecturalreview/blob/master/articles/introduction.md
 [Microsoft FastTrack for Azure]:https://azure.microsoft.com/en-us/programs/azure-fasttrack/
 [Composite SLO Estimation spreadsheet]:/tools/Composite_SLO_Estimation_Tool.xlsx
