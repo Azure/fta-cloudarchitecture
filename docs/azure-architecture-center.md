@@ -23,7 +23,7 @@ You can even [perform an assessment] of your own workload against validated best
 ## Cloud Adoption Framework
 The [Cloud Adoption Framework] provides Microsoft's guidance and recommendations for how to begin adopting the cloud in your organisation, from the initial strategic planning and assessments through to deployment of your workloads.
 
-## Other sources
+## Other resources
 As well as the Azure Architecture Center, Azure provides other great resources to help you learn and use Azure effectively.
 
 ### Documentation
