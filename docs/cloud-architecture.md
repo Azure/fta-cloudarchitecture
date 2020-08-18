@@ -92,7 +92,7 @@ The Azure SQL Database team expect almost all outages to be transient (brief and
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:/azure-architecture-center.md
+[prev]:./azure-architecture-center.md
 [home]:/README.md
 [next]:./cloud-fundamentals.md
 [Big Design Up Front]:https://en.wikipedia.org/wiki/Big_Design_Up_Front

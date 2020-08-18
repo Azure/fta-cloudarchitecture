@@ -37,7 +37,7 @@ The [Azure Quickstart Templates] page gives you access to hundreds of Azure Reso
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:./README.md
+[prev]:/README.md
 [home]:/README.md
 [next]:./cloud-architecture.md
 [Azure Architecture Center]:https://docs.microsoft.com/azure/architecture/

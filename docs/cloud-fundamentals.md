@@ -286,7 +286,7 @@ individual data stores, or to deploy multiple stamps (instances) of your whole s
 
 > **[prev]** | **[home]**  | **[next]**
 
-[prev]:./azure-architecture-center.md.md
+[prev]:./cloud-architecture.md
 [home]:/README.md
 [next]:./reliability.md
 [Application Architecture Guide - Autoscaling]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
