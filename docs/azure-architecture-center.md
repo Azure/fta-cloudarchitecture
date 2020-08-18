@@ -14,7 +14,7 @@ We have created and published a number of [reference architectures] across a wid
 The Azure Architecture Center contains a [Cloud Design Patterns] section that explain how common problems can be solved with cloud architecture. There are a large number of patterns that span several types of considerations including reliability, performance, and managing complex deployments.
 
 ## Well-Architected Framework
-The [Well-Architected Framework] is the inspiration of this discussion. The framework lays out key tenants in a series of pillars and provides guidance on technology choices and even provides a check list for each pillar. Our recommendation is to read the guide before starting a design session and use the checklists at the end as a measure.
+The [Well-Architected Framework] is the inspiration of this discussion. The framework lays out key tenets in a series of pillars and provides guidance on technology choices and even provides a check list for each pillar. Our recommendation is to read the guide before starting a design session and use the checklists at the end as a measure.
 
 There is also a [Microsoft Learn path for the Well-Architected Framework], which presents the same concepts in a guided discussion.
 
