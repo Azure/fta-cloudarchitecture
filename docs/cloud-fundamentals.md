@@ -12,6 +12,9 @@ enormous pools of compute resources and storage, vast global networks, and handl
 amount of the administrative and management burden for you. There are a few principles you should
 think about as you design your solution so that you can get the most out of being in the cloud.
 
+> 📺 Watch the [Architecting Distributed Cloud Applications] video series for even even more
+> detail on these concepts.
+
 ## Economics of the cloud
 
 In traditional models of server hosting, we typically maintained corporate server rooms and small
@@ -303,6 +306,7 @@ individual data stores, or to deploy multiple stamps (instances) of your whole s
 [Azure Well-Architected Framework - Performance efficiency pillar]:https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/overview
 [Azure Well-Architected Framework - Scaling up and scaling out]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-performance-efficiency/2-scaling-up-and-scaling-out
 [Azure Well-Architected Framework - Use a CDN]:https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-performance-efficiency/3-optimize-network-performance#use-a-cdn-to-cache-content-close-to-users
+[Architecting Distributed Cloud Applications]:https://azure.microsoft.com/blog/architecting-distributed-cloud-applications-free-video-course/
 [Event-driven architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
 [Knapsack problem]:https://en.wikipedia.org/wiki/Knapsack_problem
 [Web-Queue-Worker architecture style]:https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/web-queue-worker
