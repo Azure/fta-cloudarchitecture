@@ -4,42 +4,41 @@ This is the companion repo for the _Cloud architecture 1:many session_ run perio
 
 > For more information about the FastTrack for Azure team and 1:many sessions, visit [Azure.com/FastTrack].
 
-This presentation is about Architecture design in the Cloud. This is important because the way we design solutions in the cloud has a large impact on things like scalability, cost, performance, security and management overhead. Making good architecture decisions during the design and requirements phase helps us to be more successful in Cloud and to have a better experience once we are in Production.
+This presentation is about architecture design in the cloud. This is important because the way we design solutions in the cloud has a large impact on things like scalability, cost, performance, security and management overhead. Making good architecture decisions during the design and requirements phase helps us to be more successful in the cloud and to have a better experience once we are in production.
 
 ## 1:many sessions
 
 This presentation and content is written and delivered by Microsoft FastTrack for Azure engineers who work closely with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and critical workloads deployed into public cloud today. Our goal in a _1:many_ session is to pass on generalized advice based on "real world" experience delivering thousands of engagements and hundreds of successful production deployments in Azure.
 
-Hopefully the richness of our content will make up for our lack of presentation skills (we often don't use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest views on the good, the bad, the ugly.
+Hopefully the richness of our content will make up for our lack of presentation skills (we often don't use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest views on the good, the bad, and the ugly.
 
-> 📖 Visit [Microsoft FastTrack for Azure] to learn more about FastTrack
+> 📖 Visit [Microsoft FastTrack for Azure] to learn more about FastTrack.
 
-## Azure Well-Architected Framework
+## Azure architecture resources
 
-FastTrack for Azure team are contributors to the [Azure Architecture Center] which contains several excellent resources for Architects including [Application Architecture Guide], [Cloud Adoption Framework] and [Well-Architected Framework]. All of the architecture advice given by FastTrack in 1:1 or 1:many sessions is backed by the patterns and practices in these guides. In this presentation we will focus on the [Well-Architected Framework] (although we recommend you study them all).
+FastTrack for Azure team members are contributors to the [Azure Architecture Center] which contains several excellent resources for architects including [Application Architecture Guide], [Cloud Adoption Framework] and [Well-Architected Framework]. All of the architecture advice given by FastTrack in 1:1 or 1:many sessions is backed by the patterns and practices in these guides.
 
 ## Goals of this session
 
 By the end of this session we hope you will have a clear understanding of:
 
-* What it means to be an architect of solutions in the cloud
-* How cloud architecture is different from traditional forms of architecture, and where it is the same
-* To demonstrate how engineers and architects can use the [Azure Architecture Center], the [Well-Architected Framework] and the [Cloud Adoption Framework] in their daily work
-* To familiarise Engineers and Architects with training resources like [Microsoft Learn]
+* What it means to be an architect of solutions in the cloud.
+* How cloud architecture is different from traditional forms of architecture, and where it is the same.
+* How engineers and architects can use the [Azure Architecture Center], the [Well-Architected Framework] and the [Cloud Adoption Framework] in their daily work, and how [Microsoft Learn] can help with learning about cloud architecture.
 
-## Who Should Attend?
+Our goal is that after this session, you will be able to explore the material on the [Azure Architecture Center], and to read the [Introduction to the Microsoft Azure Well-Architected Framework]. You will also be well prepared for architecture discussions and review sessions with FastTrack engineers.
+
+## Who should attend?
 
 Any engineer or architect who is involved in the design of cloud solutions and/or the formulation of cloud and technology strategy.
 
 ## What are the prerequisites?
 
-* Complete the [Introduction to the Microsoft Azure Well-Architected Framework] module in Microsoft Learn
-* Familiarize yourself with the [Azure Architecture Center]
-* Consider guided learning paths like [Microsoft Learn], [LinkedIn Learning] and [Pluralsight]
+We recommend you attend a *FastTrack for Azure Live: Governance* session before joining this session.
 
-## Session Outline
+## Session outline
 
-This 90 minute 1:many session will run like this. Each top-level section will run for about 10 minutes.
+This 90 minute 1:many session will run like this.
 
 1. **Welcome, introductions**
    * About FastTrack for Azure
@@ -50,7 +49,7 @@ This 90 minute 1:many session will run like this. Each top-level section will ru
      * Well-Architected Framework
      * Cloud Adoption Framework
 1. **[Architecture in the cloud](./docs/cloud-architecture.md)**
-   * The role of the Architect
+   * The role of the architect
    * Architecture design session
    * Architecture review session
    * Relative cost to fix
@@ -62,24 +61,13 @@ This 90 minute 1:many session will run like this. Each top-level section will ru
     * Eventual consistency
     * Partitioning
 1. **[Reliability](./docs/reliability.md)**
-    * Well architected framework
+    * Well-Architected Framework
     * HA, BC/DR
     * Uptime, RTO, RPO
     * Azure SLAs
     * Architecture review
     * Resiliency patterns
 1. **Final question time and wrap**
-
-<!-- 
-1. **[Requirements, requirements, requirements](./docs/requirements.md)**
-    * Bringing business requirements to the design process
-    * Service selection
-    * Requirements mapping to features
-    * What's important to various Personas
-    * What about security?
--->
-<!-- 1. **[Performance & cost optimisation](./docs/performance.md)** -->
-<!-- 1. **[Operational excellence](./docs/ops.md)** -->
 
 ## Links
 
