@@ -25,8 +25,10 @@ hosting models also favoured manual operations and often had fairly relaxed secu
 
 Virtualisation helped to get more efficient use of our infrastructure, since we could provision
 capacity and spread it across multiple workloads. But for most companies it was challenging to
-achieve optimal density of VMs to hosts due to the [knapsack problem]. Scaling VMs up often requires
-even more infrastructure to be provisioned.
+achieve optimal density of virtual machines (VMs) to hosts due to the [knapsack problem].
+Scaling VMs up often requires even more infrastructure to be provisioned.
+
+![VM stacking](./images/vm-stacking.png)<br/>_Figure: VM stacking._
 
 The cloud is essentially a hyperscale virtualisation environment. Cloud regions (comprised of
 multiple datacentres) can host millions of cores and petabytes of RAM and storage. As there are so
@@ -40,8 +42,8 @@ cloud.
 Different types of resources have very different pricing models. Consider four common types of
 resources used in many cloud-hosted applications:
 
-* **Network traffic.** Azure typically does not charge for traffic entering our regions (_ingress_)
-  but does charge for traffic as it leaves (_egresses_) our regions.
+* **Network traffic.** Azure typically does not charge for traffic entering our data centres
+  (_ingress_) but does charge for traffic as it leaves (_egresses_) our data centres.
 * **Storage.** There are a number of different storage options for different storage profiles.
 * **Memory.** We need to maintain some data in memory (RAM) for fast access.
 * **Compute.** There are a large number of options for types of VMs available depending on the
@@ -214,6 +216,9 @@ clear requirements from business stakeholders is critical to making an informed 
 consistency levels. Some data stores, like Cosmos DB, even let you control the consistency level for
 individual transactions, which can help to meet more complex requirements.
 
+![Consistency levels in Cosmos DB](./images/consistency-levels.png)<br/>_Figure: Consistency
+levels in Cosmos DB_
+
 > 📖 Read more about data store and consistency level selection in
 > [Application Architecture Guide - Use the best data store for the job].
 
@@ -257,6 +262,8 @@ explicitly.
 > Divide data sources into horizontal partitions (shards) and store them in distinct databases or
 > stores. This enables high levels of scale-out across independent sets of compute and storage
 > resources.
+>
+> ![Sharding example](./images/sharding.png)<br/>_Figure: Sharding example_
 > 
 > 📖 Read the full [Sharding pattern].
 
