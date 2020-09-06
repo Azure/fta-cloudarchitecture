@@ -70,6 +70,52 @@ Migration and modernization projects are common in cloud. Rarely do systems go f
 
 Running a solution in the cloud doesn't reduce the need for requirements to be clear. In fact, the flexibility and power provided by the cloud means that it's even more important to have clear requirements from business stakeholders; otherwise, you could end up solving for problems that don't exist, missing an important design decision, or going beyond the available budget by adding unnecessary resiliency.
 
+### Non-functional requirements (NFRs)
+
+Below is a short-list of NFRs (not exhaustive) that may be provided by the business to help inform the design of a solution.
+
+#### [Reliability requirements]
+
+* Service level agreement (SLA)
+* Uptime objective
+* Recovery time objective (RTO)
+* Recovery point objective (RPO)
+
+#### [Security requirements]
+
+* Geographical location
+* Compliance and legislation
+* Identity and access management
+* Privacy
+* Public or private endpoints (or both)
+* OWASP
+* Hybrid connectivity
+* DDOS
+
+#### Performance requirements
+
+* Peak throughput, e.g. Requests per minute (RPM), active users
+* Business plan for growth
+* UX metrics (e.g. Page load time)
+* Asynchronous vs Synchronous operations
+* Workload profile (predictable, unpredictable, peak time of day)
+* Data estate size and growth rate
+* Time-to-live (TTL) of reports and views (realtime vs eventual consistency)
+
+#### Operational requirements
+
+* Prod and non-prod environments (Dev/Test, QA, Pre-prod, Prod)
+* Release frequency (hours / days / months)
+* Time to onboard (new customer)
+
+#### Cost optimization
+
+* Cost per user
+* Target hosting costs as percentage of revenue
+* Pricing model
+* Tenancy model
+
+
 ## Azure SLAs
 
 > 📖 Familiarize yourself with [Azure service-level agreements].
@@ -105,3 +151,6 @@ The Azure SQL Database team expect almost all outages to be transient (brief and
 [SLIs, SLOs, SLAs, oh my!]:https://www.youtube.com/watch?v=tEylFyxbDLE
 [SLA for Azure SQL Database]:https://azure.microsoft.com/en-au/support/legal/sla/sql-database/v1_4/
 [Azure Service-level Agreements]:https://azure.microsoft.com/en-au/support/legal/sla/
+[Reliability requirements]:https://docs.microsoft.com/en-gb/azure/architecture/framework/resiliency/overview#define-requirements
+[Cost requirements]:https://docs.microsoft.com/en-gb/azure/architecture/framework/cost/design-capture-requirements
+[Security requirements]:https://docs.microsoft.com/en-gb/azure/architecture/framework/security/governance

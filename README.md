@@ -24,6 +24,8 @@ By the end of this session we hope you will have a clear understanding of:
 
 Our goal is that after this session, you will be able to explore the material on the [Azure Architecture Center], and to read the [Introduction to the Microsoft Azure Well-Architected Framework]. You will also be well prepared for architecture discussions and review sessions with FastTrack engineers.
 
+> ℹ In this session we will focus on **Platform as a Service (PaaS)** services and architectural patterns. While there are many similarities with Infrastructure as a Service (IaaS) architectures, if you are only deploying IaaS services in cloud then not all examples may be relevant.  
+
 ## Who should attend?
 
 Any engineer or architect who is involved in the design of cloud solutions and/or the formulation of cloud and technology strategy.
@@ -57,7 +59,7 @@ Today's session will run like this.
     * Partitioning
 1. **[Reliability](./docs/reliability.md)**
     * Well-Architected Framework
-    * High availability, Disaster revovery
+    * High availability, Disaster recovery
     * Uptime, Recovery time objective, Recovery point objective
     * Azure SLAs
     * Architecture review

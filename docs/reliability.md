@@ -75,7 +75,17 @@ The uptime SLA's for each component in the _critical path_ of a solution should 
 
 How could the uptime be improved?
 
-### Map availability and recovery features to business requirements
+## Improving availability and recovery times
+
+Improving the availability and recovery times of a system can include several strategies including:
+
+* Deploying services/features that offer higher availability and shorter recovery times
+* Deploying across multiple Availability Zones (AZs) or Regions
+* Writing _Run books_; standard operating procedures for the failure modes of the services that have been deployed. Often automated.
+* Embracing _Degraded mode_: a special mode of operation that allows a system to remain available, albeit in a degraded state
+* Documenting support processes, including having a clear line of sight to Azure Support with a suitable SLA for response time. Large mission critical systems should also invest in dedicated support resources in the vendor organisation.
+
+### PaaS features for availability and recovery
 
 Azure PaaS services provide _features_ for availability and recovery. Some features are only available in certain SKUs or Tiers (e.g. Premium). Some features are provided by [Zonal or zone-redundant architecture] in Availability Zones (AZ's).
 
@@ -92,11 +102,53 @@ Take time to research the availability and recovery features of each service. En
 | Azure Cosmos DB | <ul><li>99.99% uptime [SLA](https://azure.microsoft.com/en-us/support/legal/sla/cosmos-db/v1_3/)</li><li>[Multi-region](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account#addremove-regions-from-your-database-account), [Multi-write regions](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account#configure-multiple-write-regions) (99.999% uptime SLA)</li></ul> | [Automatic and online backups](https://docs.microsoft.com/en-us/azure/cosmos-db/online-backup-and-restore) RPO: 4 hours<br/>[Multi-region](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account#addremove-regions-from-your-database-account) RPO: 0 | [Zone redundant](https://docs.microsoft.com/en-us/azure/cosmos-db/high-availability#availability-zone-support) |
 | Azure Storage | <ul><li>99.9% write, 99.99% read uptime [SLA](https://azure.microsoft.com/en-us/support/legal/sla/storage/v1_5/)</li><li>[LRS](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#locally-redundant-storage), [ZRS](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#zone-redundant-storage)</li><li>[RA-GRS, RA-GZRS](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#read-access-to-data-in-the-secondary-region)</li></ul> | [Geo-redundant storage (GRS, GZRS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy#geo-redundant-storage) <br/>RPO: 10 minutes | Zone redundant |
 
-### Multi-region deployments
+### Multi-AZ and Multi-region deployments
 
 Most availability requirements can be met in a single Azure region with Availability Zones. For systems that require an extraordinary level of availability (or scalability) a multi-region deployment may be considered. 
 
 > ℹ Contact **[Microsoft FastTrack for Azure]** for advice on multi region design and deployment.
+
+### Run books and failure modes
+
+It can be useful to consider three modes of operation for an I.T. system:
+
+1. **Normal mode**. The system is operating normally.
+2. **Degraded mode**. The system is degraded but is still responding to (some) requests.
+3. **Failure mode**. The system is down (unavailable) and is not responding to repeated requests.
+
+Failures can be _transient_ or _persistent_. Most failures in Azure are transient in nature and may not even be noticed by the client application. A transient failure for most PaaS services may last for up to 1 minute. After one minute the service would be considered to be down.
+
+Teams that are practicing operational excellence will endeavour to write and rehearse Run books for each mode of operation, for each system/service they operate. Run books can be scripted for automated mitigation, also know as _self healing_.
+
+For example, a team that operates a mission-critical system with a dependency on Azure SQL DB may have an ops run book for Normal mode, Degraded mode and Failure mode of that service:
+
+    Azure SQL DB Run book for Service XYZ
+    
+    NORMAL MODE
+    * Performance metrics are between (X) and (Y)
+    * CPU is less than (Z)
+
+    DEGRADED MODE
+    * Observe DTU flatline at 100%
+    * Response time in service A > (X)
+    Procedure:
+    1. Page on-call DBA
+    2. Disable batch load scheduler
+    3. Trigger "reports delayed" toast
+
+    FAILURE MODE
+    * Observe repeated connection failures for > 1 minute
+    Procedure:
+    1. Log Sev-A Support ticket
+    2. Page on-call DBA
+    3. Trigger "we're having problems" toast
+    4. Load `FailoverRegion.ps1` script and standby for failover
+    * Observe repeated connection failures for > 20 minutes with no view to resolution
+    Procedure:
+    1. Run failover script `FailoverRegion.ps1`: Failover to secondary region.
+    (etc)
+
+This example is written in a style that can be automated by a script (e.g. PowerShell) over time. Run books should be regularly tested and rehearsed.
 
 ## Resiliency patterns
 
