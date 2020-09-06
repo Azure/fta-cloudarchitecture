@@ -14,10 +14,6 @@ Hopefully the richness of our content will make up for our lack of presentation 
 
 > 📖 Visit [Microsoft FastTrack for Azure] to learn more about FastTrack.
 
-## Azure architecture resources
-
-FastTrack for Azure team members are contributors to the [Azure Architecture Center] which contains several excellent resources for architects including [Application Architecture Guide], [Cloud Adoption Framework] and [Well-Architected Framework]. All of the architecture advice given by FastTrack in 1:1 or 1:many sessions is backed by the patterns and practices in these guides.
-
 ## Goals of this session
 
 By the end of this session we hope you will have a clear understanding of:
@@ -38,7 +34,7 @@ We recommend you attend a *FastTrack for Azure Live: Governance* session before 
 
 ## Session outline
 
-This 90 minute 1:many session will run like this.
+Today's session will run like this.
 
 1. **Welcome, introductions**
    * About FastTrack for Azure
@@ -51,7 +47,6 @@ This 90 minute 1:many session will run like this.
 1. **[Architecture in the cloud](./docs/cloud-architecture.md)**
    * The role of the architect
    * Architecture design session
-   * Architecture review session
    * Relative cost to fix
 1. **[Cloud fundamentals](./docs/cloud-fundamentals.md)**
     * Cloud economics
@@ -62,8 +57,8 @@ This 90 minute 1:many session will run like this.
     * Partitioning
 1. **[Reliability](./docs/reliability.md)**
     * Well-Architected Framework
-    * HA, BC/DR
-    * Uptime, RTO, RPO
+    * High availability, Disaster revovery
+    * Uptime, Recovery time objective, Recovery point objective
     * Azure SLAs
     * Architecture review
     * Resiliency patterns
