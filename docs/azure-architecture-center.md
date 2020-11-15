@@ -5,7 +5,7 @@
 The [Azure Architecture Center] is a rich resource for cloud architects and engineers. Contained in its pages are patterns and practices learned from decades of building global-scale applications and operating cloud-scale infrastructure and services. FastTrack engineers use this resource every day; all of our advice is backed by the Azure Architecture Center and the greater Microsoft documentation site. Azure Architecture Center is open source and contributions are welcomed from the community.
 
 ## Application Architecture Guide
-The [Application Architecture Guide] is a great resource for answering some of the big upfront questions that face architects. It guides the reader through different styles of architecture, illuminating the benefits and challenges of each style. The recourse is great for anyone who is just starting the design process.
+The [Application Architecture Guide] is a great resource for answering some of the big upfront questions that face architects. It guides the reader through different styles of architecture, illuminating the benefits and challenges of each style. The resource is great for anyone who is just starting the design process.
 
 ## Reference architectures
 We have created and published a number of [reference architectures] across a wide number of solution areas. These are a great starting point for any architecture design session. Find a reference architecture that overlaps with your solution. Use what makes sense. Many reference architectures even provide Azure Resource Manager templates in GitHub to help you start your automation early.
