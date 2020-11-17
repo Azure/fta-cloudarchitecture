@@ -1,14 +1,14 @@
 # FastTrack for Azure: Cloud architecture
 
-This is the companion repo for the _Cloud architecture 1:many session_ run periodically by the Microsoft FastTrack for Azure team. This repo contains the presentation material and other assets for this session.
+This is the companion repo for the _Cloud architecture FastTrack for Azure: Live session_ run periodically by the Microsoft FastTrack for Azure team. This repo contains the presentation material and other assets for this session.
 
-> For more information about the FastTrack for Azure team and 1:many sessions, visit [Azure.com/FastTrack].
+> For more information about the FastTrack for Azure team and FastTrack for Azure: Live sessions, visit [Azure.com/FastTrack].
 
 This presentation is about architecture design in the cloud. This is important because the way we design solutions in the cloud has a large impact on things like scalability, cost, performance, security and management overhead. Making good architecture decisions during the design and requirements phase helps us to be more successful in the cloud and to have a better experience once we are in production.
 
-## 1:many sessions
+## FastTrack for Azure: Live sessions
 
-This presentation and content is written and delivered by Microsoft FastTrack for Azure engineers who work closely with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and critical workloads deployed into public cloud today. Our goal in a _1:many_ session is to pass on generalized advice based on "real world" experience delivering thousands of engagements and hundreds of successful production deployments in Azure.
+This presentation and content is written and delivered by Microsoft FastTrack for Azure engineers who work closely with customers in 1:1 engagements to design, configure and deploy solutions in Azure. Our customers' projects include some of the largest, most complex and critical workloads deployed into public cloud today. Our goal in a _FastTrack for Azure: Live_ session is to pass on generalized advice based on "real world" experience delivering thousands of engagements and hundreds of successful production deployments in Azure.
 
 Hopefully the richness of our content will make up for our lack of presentation skills (we often don't use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest views on the good, the bad, and the ugly.
 
@@ -40,7 +40,7 @@ Today's session will run like this.
 
 1. **Welcome, introductions**
    * About FastTrack for Azure
-   * Other 1:many sessions
+   * Other FastTrack for Azure: Live sessions
    * **[Azure Architecture Center](./docs/azure-architecture-center.md)**
      * Application architecture guide
      * Design patterns
