@@ -12,7 +12,7 @@ This presentation and content is written and delivered by Microsoft FastTrack fo
 
 Hopefully the richness of our content will make up for our lack of presentation skills (we often don't use slides). Expect fast moving highly-technical content, strong opinions (held lightly) and honest views on the good, the bad, and the ugly.
 
-> 📖 Visit [Microsoft FastTrack for Azure] to learn more about FastTrack.
+> 📖 Visit [https://aka.ms/FTALive] to see a list of all _FastTrack for Azure: Live_ sessions.
 
 ## Goals of this session
 
@@ -92,6 +92,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
+[https://aka.ms/FTALive]:https://aka.ms/FTALive
 [azure.com/FastTrack]:https://azure.microsoft.com/en-us/programs/azure-fasttrack/
 [Azure Architecture Center]:https://docs.microsoft.com/en-us/azure/architecture/
 [Application Architecture Guide]:https://docs.microsoft.com/en-us/azure/architecture/guide/
